@@ -4,9 +4,9 @@ class Api::V1::MoviesController < ApplicationController
       conn.authorization :Bearer, 014da2f6be8cc33649ff1955cae1b0e1
     end
 
-    response = conn.get("/3/movie")
+    response = conn.get("/3/search/movie?")
 
-    movies = JSON.parse(response.body)
+    movies = JSON.parse(response.body, symbolize_names: true)
   end
 
 end
