@@ -1,3 +1,3 @@
-class Api::V1::ViewingPartiesController < ApplicationController
+# class Api::V1::ViewingPartiesController < ApplicationController
   
-end
+# end
