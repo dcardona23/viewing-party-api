@@ -1,14 +1,8 @@
 class Api::V1::MoviesController < ApplicationController
   def index
-    conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-      faraday.headers["Authorization"] = "Bearer #{Rails.application.credentials.tmdb[:key]}"
-    end
+      movies = MovieGateway.get_movies_by_search_param(params[:query]) if params[:query].present?
+      movies = MovieGateway.get_movies_sorted_by_rating(params[:query]) if params[:sort_by_rating].present?
 
-    response = conn.get("/3/search/movie?query=#{params[:query]}&page=1") if params[:query]
-    response = conn.get("/3/discover/movie?sort_by=vote_average.desc&page=1") if params[:sort_by_rating]
-    json = JSON.parse(response.body, symbolize_names: true)
-
-    movies = json[:results] || []
     render json: MovieSerializer.format_movies(movies)
   end
 
