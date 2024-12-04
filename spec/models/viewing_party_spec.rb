@@ -32,12 +32,36 @@ RSpec.describe ViewingParty do
     @user1 = User.create!(name: "bob", username: "bob", password: "bob")
     @user2 = User.create!(name: "sara", username: "sara", password: "sara")
     @user3 = User.create!(name: "mike", username: "mike", password: "mike")
+
+    @viewing_party2 = ViewingParty.new(name: "test2", host_id: 99999, start_time: "10:00", end_time: "12:00", movie_id: 3, movie_title: "test")
   end
 
   describe "Create Viewing Party Endpoint" do
     describe "happy path" do
-      it "can create a viewing party", :vcr do 
+      it "can save a valid viewing party", :vcr do 
+        viewing_party = ViewingParty.new(name: "test", host_id: @user1.id, start_time: "10:00", end_time: "12:00", movie_id: 3, movie_title: "test")
 
+        expect(viewing_party.save).to be(true)
+      end
+    end
+
+    describe "sad path" do
+      it "cannot save a viewing party that is missing required attributes" do
+        invalid_viewing_party = ViewingParty.new(name: "test", host_id: 9999, start_time: "10:00", end_time: "12:00", movie_id: 3, movie_title: "test")
+
+        invalid_viewing_party2 = ViewingParty.new(name: "", host_id: 9999, start_time: "", end_time: "12:00", movie_id: 3, movie_title: "test")
+
+        invalid_viewing_party3 = ViewingParty.new(name: "test", host_id: 9999, start_time: "10:00", end_time: "", movie_id: 3, movie_title: "test")
+
+        invalid_viewing_party4 = ViewingParty.new(name: "test", host_id: 9999, start_time: "10:00", end_time: "12:00", movie_id: nil, movie_title: "test")
+
+        invalid_viewing_party5 = ViewingParty.new(name: "test", host_id: 9999, start_time: "10:00", end_time: "12:00", movie_id: 3, movie_title: "")
+
+        expect(invalid_viewing_party.save).to be(false)
+        expect(invalid_viewing_party2.save).to be(false)
+        expect(invalid_viewing_party3.save).to be(false)
+        expect(invalid_viewing_party4.save).to be(false)
+        expect(invalid_viewing_party5.save).to be(false)
       end
     end
   end

@@ -7,5 +7,4 @@ class ViewingParty < ApplicationRecord
   def host_is_valid_user
     User.exists?(id: host_id)
   end
-
 end
