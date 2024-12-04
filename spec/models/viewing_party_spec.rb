@@ -26,6 +26,10 @@ RSpec.describe ViewingParty do
       expect(invalid_viewing_party.valid?).to be(false)
       expect(invalid_viewing_party.host).to eq(nil)
     end
+
+    it "validates movie is valid movie" do
+      
+    end
   end  
 
   before(:each) do

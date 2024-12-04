@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
+  belongs_to :viewing_party
   validates :name, presence: true
 
   def self.sort_by_rating
