@@ -5,6 +5,7 @@ class Api::V1::MoviesController < ApplicationController
     end
 
     response = conn.get("/3/search/movie?query=#{params[:query]}") if params[:query]
+    response = conn.get("/3/discover/movie?sort_by=vote_average.desc&page=1") if params[:sort_by_rating]
     json = JSON.parse(response.body, symbolize_names: true)
 
     movies = json[:results] || []
