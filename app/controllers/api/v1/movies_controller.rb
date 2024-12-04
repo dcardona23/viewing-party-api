@@ -4,22 +4,17 @@ class Api::V1::MoviesController < ApplicationController
       faraday.headers["Authorization"] = "Bearer #{Rails.application.credentials.tmdb[:key]}"
     end
 
-    response = conn.get("/3/search/movie?query=Jack+Reacher")
-    # movies = Movie.filter_movies(Movie.all, params)
+    response = conn.get("/3/search/movie?query=#{params[:query]}") if params[:query]
     json = JSON.parse(response.body, symbolize_names: true)
 
-    formatted_json = { data:
-    json[:results].map do |movie|
-      {
-        id: movie[:id.to_s],
-        type: "movie",
-        attributes: {
-          title: movie[:title],
-          vote_average: movie[:vote_average]
-        }
-      }
-    end
-}
-    render json: { data: formatted_json }
+    movies = json[:results] || []
+    render json: MovieSerializer.format_movies(movies)
   end
+
+  private
+
+  def movie_params
+    params.require(:movie).permit(:title, :vote_average, :query, :sort_by_rating)
+  end
+
 end
