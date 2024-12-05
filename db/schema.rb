@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_12_05_215031) do
+ActiveRecord::Schema[7.1].define(version: 2024_12_05_221036) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,8 +46,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_05_215031) do
     t.integer "movie_id"
   end
 
-  add_foreign_key "attendees", "users"
-  add_foreign_key "attendees", "users"
-  add_foreign_key "attendees", "viewing_parties"
   add_foreign_key "attendees", "viewing_parties"
 end
