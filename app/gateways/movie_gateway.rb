@@ -23,10 +23,10 @@ class MovieGateway
     response = conn.get("/3/movie/#{id}") 
     json = JSON.parse(response.body, symbolize_names: true)
     
-    
     if json[:success] == false
       raise ActiveRecord::RecordNotFound, "Movie with Id #{id} not found"
     end
+
     Movie.new(json)
   end
 

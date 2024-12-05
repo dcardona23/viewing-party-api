@@ -14,7 +14,6 @@ class Api::V1::MoviesController < ApplicationController
   def show
     id = params[:id]
     movie = MovieGateway.get_movie_by_id(id)
-
     render json: MovieSerializer.format_movie(movie)
   end
 
