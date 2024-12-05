@@ -13,7 +13,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   private
 
   def viewing_party_params
-    params.require(:viewing_party).permit(:name, :start_time, :end_time, :movie_id, :movie_title, :host_id)
+    params.require(:viewing_party).permit(:name, :start_time, :end_time, :movie_id, :movie_title, :host_id, invitees: [])
   end
 
   def record_not_found(exception)
