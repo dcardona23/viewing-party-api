@@ -14,8 +14,12 @@ class MovieGateway
   def self.get_movie_by_id(id)
     response = conn.get("/3/movie/#{id}") 
     json = JSON.parse(response.body, symbolize_names: true)
-    movie = json
-    movie
+    
+    
+    if json[:success] == false
+      raise ActiveRecord::RecordNotFound, "Movie with Id #{id} not found"
+    end
+    json
   end
 
   private

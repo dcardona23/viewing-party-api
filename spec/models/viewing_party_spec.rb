@@ -27,8 +27,13 @@ RSpec.describe ViewingParty do
       expect(invalid_viewing_party.host).to eq(nil)
     end
 
-    it "validates movie is valid movie" do
-      
+    it "validates movie is valid movie", :vcr do
+      user = User.create!(name: "test", username: "test", password: "test")
+      viewing_party = ViewingParty.new(name: "test", host_id: user.id, start_time: "10:00", end_time: "12:00", movie_id: 75780, movie_title: "test")
+      viewing_party2 = ViewingParty.new(name: "test", host_id: user.id, start_time: "10:00", end_time: "12:00", movie_id: 1, movie_title: "test")
+
+      expect(viewing_party.valid?).to be(true)
+      expect(viewing_party2.valid?).to be(false)
     end
   end  
 
