@@ -7,11 +7,13 @@ class ViewingParty < ApplicationRecord
   validate :movie_is_valid_movie
 
   def host_is_valid_user
-    User.exists?(id: host_id)
+    unless User.exists?(id: host_id)
+      errors.add(:host_id, "invalid host id")
+    end
   end
 
   def movie_is_valid_movie
-    
+
   end
 
 end

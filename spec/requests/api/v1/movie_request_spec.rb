@@ -42,4 +42,14 @@ RSpec.describe "Movies By Search Params Endpoint" do
       expect(rating_one >= rating_twenty)
     end
   end
+
+  describe "Movie by ID Endpoint" do
+    it "can retrieve a movie by id", :vcr do 
+      movie_id = 75780
+      get "/api/v1/movies/#{movie_id}"
+
+      expect(response).to be_successful
+      json = JSON.parse(response.body, symbolize_names: true)
+    end
+  end
 end

@@ -11,6 +11,13 @@ class MovieGateway
     movies = json[:results] || []
   end
 
+  def self.get_movie_by_id(id)
+    response = conn.get("/3/movie/#{id}") 
+    json = JSON.parse(response.body, symbolize_names: true)
+    movie = json
+    movie
+  end
+
   private
 
   def self.conn

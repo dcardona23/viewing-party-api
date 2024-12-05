@@ -6,6 +6,11 @@ class Api::V1::MoviesController < ApplicationController
     render json: MovieSerializer.format_movies(movies)
   end
 
+  def show
+    movie = MovieGateway.get_movie_by_id(params[:id]) if params[:id].present?
+    render json: MovieSerializer.format_movie(movie)
+  end
+
   private
 
   def movie_params

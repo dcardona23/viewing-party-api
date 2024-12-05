@@ -16,4 +16,18 @@ class MovieSerializer
     end
   }
   end
+
+  def self.format_movie(movie)
+    { 
+      data: 
+      {
+        id: movie[:id].to_s,
+        type: "movie",
+        attributes: {
+          title: movie[:title],
+          vote_average: movie[:vote_average]
+        }
+      }
+    }
+  end
 end
