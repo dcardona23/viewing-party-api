@@ -23,6 +23,7 @@ class ViewingParty < ApplicationRecord
 
   def movie_is_valid_movie
     movie = MovieGateway.get_movie_by_id(movie_id)
-    movie[:success] != false
+    # binding.pry
+    !movie.nil?
   end
 end

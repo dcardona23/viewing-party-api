@@ -1,0 +1,114 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/discover/movie?page=1&sort_by=vote_average.desc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_API_KEY>
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 05 Dec 2024 16:33:16 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=17702
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 92328b8dbe613c069d6d8c7543fca78c
+      X-Memc-Age:
+      - '9373'
+      X-Memc-Expires:
+      - '17702'
+      Etag:
+      - W/"39161e6fb78fdeeb8c7416d88272c3a5"
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 d4fb3448d1a8d3229dcf0a89f4bbe7e8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - Z8u9yoZP1dIO9s1aaTixyc1Ocpk1vbgqP-9uW417tdjkG8Bxpm5MTw==
+      Age:
+      - '6592'
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":null,"genre_ids":[35],"id":1397725,"original_language":"en","original_title":"ABSURDITY.","overview":"It''s
+        finally time for this fool to return to his winter home: Prison! To do so,
+        he commits various crimes around town attract the police. Will he succeed?","popularity":0.0,"poster_path":"/iO9w02mWqCBxztpSHxt717R6anM.jpg","release_date":"","title":"ABSURDITY.","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/if7psTcBoknKHR4MJ4Bxi3mgXxs.jpg","genre_ids":[27,18,53],"id":1397483,"original_language":"pt","original_title":"Vestido
+        Branco com Listras Vermelhas","overview":"","popularity":0.847,"poster_path":"/eVde5pZ5Cvm9WA4uUeo40KvZwsz.jpg","release_date":"2024-08-26","title":"Vestido
+        Branco com Listras Vermelhas","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/j30eAo11F7MuShga6Jj5Nh5lKO.jpg","genre_ids":[],"id":1397323,"original_language":"en","original_title":"Lethe","overview":"A
+        Mysterious Figure Wakes up on a beach with no recollection of how they got
+        there","popularity":1.4,"poster_path":"/q8u2VezY44TG6lN86x4bAOIKsOn.jpg","release_date":"2024-06-14","title":"Lethe","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":1397271,"original_language":"es","original_title":"19387.71919992848-9991837","overview":"","popularity":1.4,"poster_path":"/nB2cscwdRlZLOrF0ai5GCfOSN6L.jpg","release_date":"2024-11-30","title":"19387.71919992848-9991837","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/u07IKigR7729ECzU4zVwxmO9650.jpg","genre_ids":[27],"id":1397262,"original_language":"en","original_title":"The
+        Chef","overview":"A 70''s style slasher short film about four college students
+        dine and dash, but their prank turns deadly when a vengeful chef hunts them
+        down. As the night descends into horror, they’re forced to face his twisted
+        masterpiece...","popularity":1.4,"poster_path":"/Zx01CboErXfFpvZny7cADj5Dfc.jpg","release_date":"2024-12-04","title":"The
+        Chef","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/knwXWV0vkNDZqxlISXkkWZK01Aq.jpg","genre_ids":[],"id":1397145,"original_language":"pt","original_title":"Aborto","overview":"Maria,
+        a young woman confined by loneliness and the weight of a conflicting past,
+        lives suffocating days in a house that holds memories and silences. Between
+        erased traditions and choices, she challenges the impositions of purity, searching,
+        between guilt and resistance, for a way to escape the imposed pain.","popularity":0.84,"poster_path":"/q2C4U1t9tGpzK3Ov1b2bqvpWqgU.jpg","release_date":"","title":"Abortion","video":false,"vote_average":10.0,"vote_count":2},{"adult":false,"backdrop_path":"/sVDZDGJ0nDVsFC5mBkxdEqnfqLe.jpg","genre_ids":[18,10751],"id":1397116,"original_language":"en","original_title":"A
+        Series of Short Poems","overview":"A young couple try to cope with the loss
+        of their child. Through three short poems, their feelings and emotions are
+        visually represented in this silent film.","popularity":0.36,"poster_path":"/8T8mv4NCR3hYx8H5RE4PuwOkMu4.jpg","release_date":"2020-12-14","title":"A
+        Series of Short Poems","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/21HB1kH1yorHevqxZoU3gtFfKW.jpg","genre_ids":[27,53],"id":1397111,"original_language":"en","original_title":"Quarantine","overview":"This
+        short film captures the feeling of claustrophobia during self quarantine and
+        isolation through the coronavirus pandemic.","popularity":0.84,"poster_path":"/7HJrt07go69bzHdaX0CphxEKPWr.jpg","release_date":"2020-04-25","title":"Quarantine","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/z3qU6ooKLAct5trKjYGRkCKTA52.jpg","genre_ids":[27,18],"id":1397103,"original_language":"pt","original_title":"Roteiro
+        Fatal","overview":"","popularity":0.84,"poster_path":"/8e9lMtgrlaQfADpIY4IiFDlWxcA.jpg","release_date":"","title":"Roteiro
+        Fatal","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/vC00A0AoQAdRgTwgtDjS4reBPD1.jpg","genre_ids":[35],"id":1397087,"original_language":"en","original_title":"Doing
+        The Two","overview":"Breaking News: A new drug trend has taken the local youth
+        by storm. Activist Karen Shepard is on the front lines, fighting for change.
+        Her goal is to lift the face mask policy once and for all in order to stop
+        teenagers, like her son, from inhaling their own carbon dioxide.","popularity":0.36,"poster_path":"/1Z6TFq2NbYYkPcZ6lDHuvRDaIIU.jpg","release_date":"2020-11-29","title":"Doing
+        The Two","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/dAagEEByxKuRoCyO7Rba6E24xr0.jpg","genre_ids":[18,9648],"id":1397065,"original_language":"en","original_title":"Private
+        Life","overview":"Private Investigator, Ray, is offered a job from a wealthy
+        real estate agent to catch her husband cheating. However, accepting the assignment
+        creates doubts involving his own relationship with his fiancee, Sarah.","popularity":0.36,"poster_path":"/ocCGNRsK5N2Xmhy6eHpLuvX1mTz.jpg","release_date":"2021-07-18","title":"Private
+        Life","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[35,18],"id":1397016,"original_language":"es","original_title":"Incontiencia","overview":"","popularity":0.384,"poster_path":"/zXmBGbysOXfoctqbcFUs6iIjRP5.jpg","release_date":"2024-08-31","title":"Incontiencia","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":1396892,"original_language":"id","original_title":"marvel","overview":"","popularity":1.457,"poster_path":null,"release_date":"","title":"marvel","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":1396796,"original_language":"uk","original_title":"Микола
+        Вінграновський","overview":"","popularity":0.708,"poster_path":"/zvbEWf82c0a8U7AnTOTITOePxhI.jpg","release_date":"1993-01-01","title":"Микола
+        Вінграновський","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/xXhtghgCl2KoHcKkuWmAppMnxdf.jpg","genre_ids":[18],"id":1396705,"original_language":"pt","original_title":"Pra
+        não dizer que não falei de ódio","overview":"","popularity":1.96,"poster_path":"/y6d82tIT28ykPSo5wpRNPhdIjVq.jpg","release_date":"2024-11-28","title":"Pra
+        não dizer que não falei de ódio","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[27],"id":1396682,"original_language":"en","original_title":"The
+        Butcher of The World","overview":"After a man discovers a lighter while digging
+        in his backyard, a dark force starts to manifest itself inside his home.","popularity":0.84,"poster_path":"/wj1xbaIHjDJ4RfjVOsJzt9hVe1H.jpg","release_date":"2020-10-24","title":"The
+        Butcher of The World","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/wTwUkpQmZ9Fth1OW1xEVOaaNB7K.jpg","genre_ids":[99],"id":1396624,"original_language":"es","original_title":"DisoVlog","overview":"","popularity":2.744,"poster_path":"/ctzOtTqGLduxGgJQ37gfsM1YCI7.jpg","release_date":"2024-12-02","title":"DisoVlog","video":false,"vote_average":10.0,"vote_count":2},{"adult":false,"backdrop_path":"/wYhWTJdl2vZoBNVIsUfaaezxxvf.jpg","genre_ids":[28,35],"id":1396584,"original_language":"en","original_title":"Winning
+        Hand","overview":"Mike and Jim meet at a resort poker table. Chaos unfolds
+        when cheating is discovered between the two.","popularity":2.744,"poster_path":"/hyGHSm4iFm2ekyU2VJmdw1UUeZZ.jpg","release_date":"2024-12-02","title":"Winning
+        Hand","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/vMXF1NR9Iz8ALoiwwOiQuts53P5.jpg","genre_ids":[99],"id":1396554,"original_language":"es","original_title":"Los
+        humanos también ladran","overview":"Starting from Claudia''s incredible connection
+        with dogs, the relationship she has with her past and the changes she experiences
+        thanks to these animals are explored. The daily activities of the shelter
+        where she volunteers are shown, and Blanca, the shelter''s owner, highlights
+        the difficulties they face in keeping the place running.","popularity":2.744,"poster_path":"/zUSsqczCzdKjq7tCfHsyeW2RvZz.jpg","release_date":"2024-12-01","title":"Humans
+        Also Bark","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[18,10752,36,10749],"id":1396481,"original_language":"es","original_title":"La
+        Rebelión: Historia de nuestras raíces","overview":"","popularity":0.906,"poster_path":"/ytvzqTqFi6t5imYwTC4vBYfjqFw.jpg","release_date":"1984-08-24","title":"La
+        Rebelión: Historia de nuestras raíces","video":false,"vote_average":10.0,"vote_count":1}],"total_pages":47482,"total_results":949638}'
+  recorded_at: Thu, 05 Dec 2024 18:23:08 GMT
+recorded_with: VCR 6.3.1

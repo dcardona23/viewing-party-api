@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?page=1&query=Jack%20Reacher
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_API_KEY>
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bb95501cab86419de746ede235ce505e
+      X-Memc-Age:
+      - '4489'
+      X-Memc-Expires:
+      - '17313'
+      Date:
+      - Thu, 05 Dec 2024 16:33:15 GMT
+      Cache-Control:
+      - public, max-age=21524
+      Etag:
+      - W/"b307e7fd94de9690350ccd9f584d5175"
+      Vary:
+      - Origin
+      - accept-encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 cf7db6af8b8a86ebeb9fc938221e81da.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - qTjwbN5fSIek3SeL77naw3FRzZqjQ2AVAU7ZSsQNKJyg6hEx6j2zxA==
+      Age:
+      - '6593'
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/iwvP8XVpYVmJ3xfF9xdBi5uAOWl.jpg","genre_ids":[80,18,53,28],"id":75780,"original_language":"en","original_title":"Jack
+        Reacher","overview":"One morning in an ordinary town, five people are shot
+        dead in a seemingly random attack. All evidence points to a single suspect:
+        an ex-military sniper who is quickly brought into custody. The interrogation
+        yields one written note: ''Get Jack Reacher!''. Reacher, an enigmatic ex-Army
+        investigator, believes the authorities have the right man but agrees to help
+        the sniper''s defense attorney. However, the more Reacher delves into the
+        case, the less clear-cut it appears. So begins an extraordinary chase for
+        the truth, pitting Jack Reacher against an unexpected enemy, with a skill
+        for violence and a secret to keep.","popularity":61.542,"poster_path":"/uQBbjrLVsUibWxNDGA4Czzo8lwz.jpg","release_date":"2012-12-20","title":"Jack
+        Reacher","video":false,"vote_average":6.6,"vote_count":6976},{"adult":false,"backdrop_path":"/ww1eIoywghjoMzRLRIcbJLuKnJH.jpg","genre_ids":[28,53],"id":343611,"original_language":"en","original_title":"Jack
+        Reacher: Never Go Back","overview":"When Major Susan Turner is arrested for
+        treason, ex-investigator Jack Reacher undertakes the challenging task to prove
+        her innocence and ends up exposing a shocking conspiracy.","popularity":60.144,"poster_path":"/cOg3UT2NYWHZxp41vpxAnVCOC4M.jpg","release_date":"2016-10-19","title":"Jack
+        Reacher: Never Go Back","video":false,"vote_average":5.99,"vote_count":4850},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":1045592,"original_language":"en","original_title":"Jack
+        Reacher: When the Man Comes Around","overview":"Cast and crew speak on adapting
+        One Shot as the first Jack Reacher film, casting Tom Cruise, earning Lee Child''s
+        blessing, additional character qualities and the performances that shape them,
+        Lee Child''s cameo in the film, and shooting the film''s climax.","popularity":18.977,"poster_path":"/tcOPca5Ook6aR9mehrnxD9kfk7m.jpg","release_date":"2013-05-07","title":"Jack
+        Reacher: When the Man Comes Around","video":false,"vote_average":8.0,"vote_count":2}],"total_pages":1,"total_results":3}'
+  recorded_at: Thu, 05 Dec 2024 18:23:08 GMT
+recorded_with: VCR 6.3.1
