@@ -1,13 +1,20 @@
 class Api::V1::ViewingPartiesController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
 
 
   def create
-    viewing_party = ViewingParty.new(viewing_party_params)
+    host = User.find(params[:user_id])
 
-    if viewing_party.save
-      render json: ViewingPartySerializer.format_viewing_party(viewing_party) 
+    if host.nil?
+      raise ActiveRecord::RecordInvalid, "Unauthorized" 
+    else
+      viewing_party = ViewingParty.new(viewing_party_params)
     end
+
+    render json: ViewingPartySerializer.format_viewing_party(viewing_party) 
+    attendee = Attendee.create!(viewing_party_id: viewing_party.id, user_id: host.id, is_host: true, name: host.name, username: host.username)
+    binding.pry
   end
 
   private

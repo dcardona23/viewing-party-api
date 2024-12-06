@@ -1,5 +1,5 @@
 class ViewingParty < ApplicationRecord
-  has_many :movies
+  belongs_to :movie
   has_many :attendees
   has_many :users, through: :attendees
 
