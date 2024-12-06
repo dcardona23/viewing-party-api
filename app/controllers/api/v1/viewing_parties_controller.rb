@@ -31,7 +31,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
   private
 
   def record_not_found(exception)
-    render json: ErrorSerializer.format_error(exception)
+    render json: { message: "Your query could not be completed", errors: exception.message }, status: :not_found
   end
 
   def record_invalid(exception)

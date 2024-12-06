@@ -11,8 +11,8 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
     it "can create a viewing party" do
       viewing_party_params = {
         name: "test",
-        start_time: "12",
-        end_time: "2",
+        start_time: "2025-02-01 10:00:00",
+        end_time: "2025-02-01 01:00:00",
         movie_id: 4,
         movie_title: "Inception",
         invitees: [@user2.id, @user3.id]
@@ -55,7 +55,7 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
       expect(response).to have_http_status(:unprocessable_entity)
 
       data = JSON.parse(response.body, symbolize_names: true)
-      
+
       expect(data[:message]).to eq("Your query could not be completed")
       expect(data[:errors]).to be_an(Array)
       expect(data[:errors][0]).to eq("Name can't be blank")
