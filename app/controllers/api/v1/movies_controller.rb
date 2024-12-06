@@ -12,10 +12,17 @@ class Api::V1::MoviesController < ApplicationController
   end
 
   def show
-    id = params[:id]
-    movie = MovieGateway.get_movie_by_id(id)
-    render json: MovieSerializer.format_movie(movie)
-    #could return a PORO when it asks for less data and a serializer when it asks for more
+    if params[:data]
+      movie_full = MovieGateway.get_movie_by_id_full(params[:id])
+    else
+      movie = MovieGateway.get_movie_by_id(params[:id])
+    end
+
+    if params[:data]
+      render json: MovieSerializer.format_movie_full(movie_full)
+    else
+      render json: MovieSerializer.format_movie(movie)
+    end
   end
 
   private

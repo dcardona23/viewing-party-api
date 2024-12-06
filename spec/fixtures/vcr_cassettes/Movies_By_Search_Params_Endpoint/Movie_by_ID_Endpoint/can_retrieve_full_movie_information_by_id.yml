@@ -1,0 +1,676 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/75780data=full
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_API_KEY>
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 06 Dec 2024 21:26:04 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=22486
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 7ce07b4f474577c936862eac625876f7
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '22486'
+      Etag:
+      - W/"4e214bd188cd72998664ffda4f604961"
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 88bce767af5e31f726ade38ea5253bd4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - EiM2-zDh9mtQhRW7lciv5jlNrcHIEdwpDoBFCorhsJ4XWufquxEyPQ==
+    body:
+      encoding: UTF-8
+      string: '{"adult":false,"backdrop_path":"/iwvP8XVpYVmJ3xfF9xdBi5uAOWl.jpg","belongs_to_collection":{"id":403374,"name":"Jack
+        Reacher Collection","poster_path":"/qtafXiYDUMKxzsssU41qWey5oiT.jpg","backdrop_path":"/vViRXFnSyGJ2fzMbcc5sqTKswcd.jpg"},"budget":60000000,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"},{"id":28,"name":"Action"}],"homepage":"http://www.jackreachermovie.com/","id":75780,"imdb_id":"tt0790724","origin_country":["US"],"original_language":"en","original_title":"Jack
+        Reacher","overview":"One morning in an ordinary town, five people are shot
+        dead in a seemingly random attack. All evidence points to a single suspect:
+        an ex-military sniper who is quickly brought into custody. The interrogation
+        yields one written note: ''Get Jack Reacher!''. Reacher, an enigmatic ex-Army
+        investigator, believes the authorities have the right man but agrees to help
+        the sniper''s defense attorney. However, the more Reacher delves into the
+        case, the less clear-cut it appears. So begins an extraordinary chase for
+        the truth, pitting Jack Reacher against an unexpected enemy, with a skill
+        for violence and a secret to keep.","popularity":63.484,"poster_path":"/uQBbjrLVsUibWxNDGA4Czzo8lwz.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount
+        Pictures","origin_country":"US"},{"id":82819,"logo_path":"/gXfFl9pRPaoaq14jybEn1pHeldr.png","name":"Skydance
+        Media","origin_country":"US"},{"id":21777,"logo_path":null,"name":"TC Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2012-12-20","revenue":218300000,"runtime":130,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        law has limits. He does not.","title":"Jack Reacher","video":false,"vote_average":6.6,"vote_count":6976}'
+  recorded_at: Fri, 06 Dec 2024 21:26:04 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/75780
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_API_KEY>
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 06 Dec 2024 19:59:17 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=20399
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - ac0c1e27c9ecc8a7c80cb66c51c30009
+      X-Memc-Age:
+      - '1622'
+      X-Memc-Expires:
+      - '20399'
+      Etag:
+      - W/"4e214bd188cd72998664ffda4f604961"
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 a7c0ba01db75946f7df3f7eaf69984b6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - puUEBWn5sGnGv6oK_snnYy-NSbuSvC7kBhjUg6fC5EwgLNwbCZnGRw==
+      Age:
+      - '7445'
+    body:
+      encoding: UTF-8
+      string: '{"adult":false,"backdrop_path":"/iwvP8XVpYVmJ3xfF9xdBi5uAOWl.jpg","belongs_to_collection":{"id":403374,"name":"Jack
+        Reacher Collection","poster_path":"/qtafXiYDUMKxzsssU41qWey5oiT.jpg","backdrop_path":"/vViRXFnSyGJ2fzMbcc5sqTKswcd.jpg"},"budget":60000000,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"},{"id":28,"name":"Action"}],"homepage":"http://www.jackreachermovie.com/","id":75780,"imdb_id":"tt0790724","origin_country":["US"],"original_language":"en","original_title":"Jack
+        Reacher","overview":"One morning in an ordinary town, five people are shot
+        dead in a seemingly random attack. All evidence points to a single suspect:
+        an ex-military sniper who is quickly brought into custody. The interrogation
+        yields one written note: ''Get Jack Reacher!''. Reacher, an enigmatic ex-Army
+        investigator, believes the authorities have the right man but agrees to help
+        the sniper''s defense attorney. However, the more Reacher delves into the
+        case, the less clear-cut it appears. So begins an extraordinary chase for
+        the truth, pitting Jack Reacher against an unexpected enemy, with a skill
+        for violence and a secret to keep.","popularity":63.484,"poster_path":"/uQBbjrLVsUibWxNDGA4Czzo8lwz.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount
+        Pictures","origin_country":"US"},{"id":82819,"logo_path":"/gXfFl9pRPaoaq14jybEn1pHeldr.png","name":"Skydance
+        Media","origin_country":"US"},{"id":21777,"logo_path":null,"name":"TC Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2012-12-20","revenue":218300000,"runtime":130,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        law has limits. He does not.","title":"Jack Reacher","video":false,"vote_average":6.6,"vote_count":6976}'
+  recorded_at: Fri, 06 Dec 2024 22:03:22 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/75780/credits
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_API_KEY>
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 06 Dec 2024 22:03:22 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=17081
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 694f512fd41edc03c5e4618476241ba5
+      X-Memc-Age:
+      - '9049'
+      X-Memc-Expires:
+      - '17081'
+      Etag:
+      - W/"68003c2b6048939624ca537756287688"
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 a7c0ba01db75946f7df3f7eaf69984b6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 5yVUdBZotSQl2VG2EioAobfMeqn_6uiKXCT2w-V05C63bLNt4txrug==
+    body:
+      encoding: UTF-8
+      string: '{"id":75780,"cast":[{"adult":false,"gender":2,"id":500,"known_for_department":"Acting","name":"Tom
+        Cruise","original_name":"Tom Cruise","popularity":105.965,"profile_path":"/3mShHjSQR7NXOVbdTu5rT2Qd0MN.jpg","cast_id":1001,"character":"Jack
+        Reacher","credit_id":"52fe4912c3a368484e11918f","order":0},{"adult":false,"gender":1,"id":10882,"known_for_department":"Acting","name":"Rosamund
+        Pike","original_name":"Rosamund Pike","popularity":40.711,"profile_path":"/8ObNklHDi2hjdz0ayzJFB9jtqzm.jpg","cast_id":1002,"character":"Helen
+        Rodin","credit_id":"52fe4912c3a368484e119193","order":1},{"adult":false,"gender":2,"id":28633,"known_for_department":"Acting","name":"Richard
+        Jenkins","original_name":"Richard Jenkins","popularity":16.807,"profile_path":"/muT3RZG9hiKaKojD751RcQ5tGEy.jpg","cast_id":1014,"character":"D.A.
+        Alex Rodin","credit_id":"52fe4912c3a368484e1191cf","order":2},{"adult":false,"gender":2,"id":35013,"known_for_department":"Acting","name":"David
+        Oyelowo","original_name":"David Oyelowo","popularity":17.532,"profile_path":"/7UZHRwOKe2cYxj8SeNUklyPYkns.jpg","cast_id":1015,"character":"Det.
+        Emerson","credit_id":"52fe4912c3a368484e1191d3","order":3},{"adult":false,"gender":2,"id":6818,"known_for_department":"Directing","name":"Werner
+        Herzog","original_name":"Werner Herzog","popularity":14.43,"profile_path":"/qKlz1oM482Xf0jTPfLiR6qXlLYK.jpg","cast_id":1013,"character":"Zec
+        Chelovek","credit_id":"52fe4912c3a368484e1191cb","order":4},{"adult":false,"gender":2,"id":224181,"known_for_department":"Acting","name":"Jai
+        Courtney","original_name":"Jai Courtney","popularity":19.804,"profile_path":"/6vEaNwbOKov6yzQx15CdtrqfK3L.jpg","cast_id":1016,"character":"Charlie","credit_id":"52fe4912c3a368484e1191d7","order":5},{"adult":false,"gender":2,"id":3087,"known_for_department":"Acting","name":"Robert
+        Duvall","original_name":"Robert Duvall","popularity":37.948,"profile_path":"/ybMmK25h4IVtfE7qrnlVp47RQlh.jpg","cast_id":1012,"character":"Martin
+        Cash","credit_id":"52fe4912c3a368484e1191c7","order":6},{"adult":false,"gender":2,"id":1132335,"known_for_department":"Acting","name":"Vladimir
+        Sizov","original_name":"Vladimir Sizov","popularity":4.649,"profile_path":"/kbHRSZaw8CKUF1FfAM4qn4uQsXE.jpg","cast_id":1044,"character":"Vlad","credit_id":"52fe4913c3a368484e119247","order":7},{"adult":false,"gender":2,"id":82631,"known_for_department":"Acting","name":"Joseph
+        Sikora","original_name":"Joseph Sikora","popularity":17.194,"profile_path":"/xql9QZqU9povZhRIkuXym2FtoFq.jpg","cast_id":1019,"character":"James
+        Barr","credit_id":"52fe4913c3a368484e1191e3","order":8},{"adult":false,"gender":1,"id":165293,"known_for_department":"Acting","name":"Nicole
+        Forester","original_name":"Nicole Forester","popularity":9.132,"profile_path":"/qca1iaqslZFEtTIBGSE4UJ0bEjH.jpg","cast_id":1030,"character":"Nancy
+        Holt","credit_id":"52fe4913c3a368484e11920f","order":9},{"adult":false,"gender":2,"id":53259,"known_for_department":"Acting","name":"Michael
+        Raymond-James","original_name":"Michael Raymond-James","popularity":13.476,"profile_path":"/1rSn1xKAwkJ19uFLyLovW9sN7Jo.jpg","cast_id":1017,"character":"Linsky","credit_id":"52fe4912c3a368484e1191db","order":10},{"adult":false,"gender":1,"id":203630,"known_for_department":"Acting","name":"Alexia
+        Fast","original_name":"Alexia Fast","popularity":7.66,"profile_path":"/ei0X8e0LSQbnDAC4uUILWPSzQWP.jpg","cast_id":1021,"character":"Sandy","credit_id":"52fe4913c3a368484e1191e7","order":11},{"adult":false,"gender":2,"id":1056053,"known_for_department":"Acting","name":"Josh
+        Helman","original_name":"Josh Helman","popularity":13.723,"profile_path":"/1thwLjrgvFv7ifjyVtTKQh23OCh.jpg","cast_id":1018,"character":"Jeb
+        Oliver","credit_id":"52fe4913c3a368484e1191df","order":12},{"adult":false,"gender":2,"id":162849,"known_for_department":"Acting","name":"James
+        Martin Kelly","original_name":"James Martin Kelly","popularity":4.438,"profile_path":"/tEzKhyEa5SO3bUyvwV9yO521kKj.jpg","cast_id":1028,"character":"Rob
+        Farrior","credit_id":"52fe4913c3a368484e119207","order":13},{"adult":false,"gender":2,"id":2695,"known_for_department":"Acting","name":"Dylan
+        Kussman","original_name":"Dylan Kussman","popularity":12.1,"profile_path":"/33V8NdkLrpSCEVeIiKk5DoGRthx.jpg","cast_id":1022,"character":"Gary","credit_id":"52fe4913c3a368484e1191eb","order":14},{"adult":false,"gender":0,"id":1286869,"known_for_department":"Acting","name":"Denver
+        Milord","original_name":"Denver Milord","popularity":2.216,"profile_path":"/njXrLKaHdvikruWFYaQvPcLoI6K.jpg","cast_id":1045,"character":"Punk","credit_id":"52fe4913c3a368484e11924b","order":15},{"adult":false,"gender":1,"id":157081,"known_for_department":"Acting","name":"Susan
+        Angelo","original_name":"Susan Angelo","popularity":5.87,"profile_path":"/AfNdGjzP7ifzkkjOzxhN3hi2pAm.jpg","cast_id":1046,"character":"Oline
+        Archer","credit_id":"52fe4913c3a368484e11924f","order":16},{"adult":false,"gender":1,"id":155042,"known_for_department":"Acting","name":"Julia
+        Yorks","original_name":"Julia Yorks","popularity":5.217,"profile_path":"/acUgJpmBuZYqhXpsAf8LG3OaQi2.jpg","cast_id":1029,"character":"Chrissie
+        Farrior","credit_id":"52fe4913c3a368484e11920b","order":17},{"adult":false,"gender":1,"id":1286870,"known_for_department":"Acting","name":"Delilah
+        Picart","original_name":"Delilah Picart","popularity":2.223,"profile_path":"/ruBhljYZLJGWwxBbhkUQy6bt39F.jpg","cast_id":1047,"character":"Rita
+        Coronado","credit_id":"52fe4913c3a368484e119253","order":18},{"adult":false,"gender":2,"id":219679,"known_for_department":"Acting","name":"Joe
+        Coyle","original_name":"Joe Coyle","popularity":1.763,"profile_path":"/3CfdYOPhitgp4Z7mAnbqSrvWHgo.jpg","cast_id":1032,"character":"Darren
+        Sawyer","credit_id":"52fe4913c3a368484e119213","order":19},{"adult":false,"gender":1,"id":1272959,"known_for_department":"Acting","name":"Alicia
+        Murton","original_name":"Alicia Murton","popularity":3.726,"profile_path":"/qAgblVQfPHhtE6X7AiXwBzzzSQr.jpg","cast_id":1033,"character":"Mrs.
+        Sawyer","credit_id":"52fe4913c3a368484e119217","order":20},{"adult":false,"gender":2,"id":208762,"known_for_department":"Acting","name":"Peter
+        Gannon","original_name":"Peter Gannon","popularity":2.409,"profile_path":"/2ZeFxPe3W7jbcl2STQERal5kfmO.jpg","cast_id":1034,"character":"Mr.
+        Archer","credit_id":"52fe4913c3a368484e11921b","order":21},{"adult":false,"gender":2,"id":1124950,"known_for_department":"Acting","name":"David
+        Whalen","original_name":"David Whalen","popularity":1.457,"profile_path":"/o6PgKChn3aNEufDmCh7sb41P8i8.jpg","cast_id":1035,"character":"Mr.
+        Holt","credit_id":"52fe4913c3a368484e11921f","order":22},{"adult":false,"gender":2,"id":1272960,"known_for_department":"Acting","name":"Tristan
+        Elma","original_name":"Tristan Elma","popularity":0.001,"profile_path":null,"cast_id":1036,"character":"Marcos
+        Coronado","credit_id":"52fe4913c3a368484e119223","order":23},{"adult":false,"gender":1,"id":1272961,"known_for_department":"Acting","name":"Sophie
+        Guest","original_name":"Sophie Guest","popularity":1.726,"profile_path":"/kXFEeGrT85CDyu3K2gxUdvS9VdD.jpg","cast_id":1037,"character":"Little
+        Girl","credit_id":"52fe4913c3a368484e119227","order":24},{"adult":false,"gender":2,"id":1799,"known_for_department":"Acting","name":"Michael
+        Minor","original_name":"Michael Minor","popularity":2.863,"profile_path":"/4ra89aJSzs0NrPMrYTPSHRbF0hx.jpg","cast_id":1038,"character":"Eyewitness","credit_id":"52fe4913c3a368484e11922b","order":25},{"adult":false,"gender":0,"id":1055739,"known_for_department":"Acting","name":"Scott
+        A. Martin","original_name":"Scott A. Martin","popularity":1.908,"profile_path":"/4SILhcxFuA27foDCSesQEwEAUOj.jpg","cast_id":1039,"character":"Wesley","credit_id":"52fe4913c3a368484e11922f","order":26},{"adult":false,"gender":1,"id":1272962,"known_for_department":"Acting","name":"CJ
+        Ramirez","original_name":"CJ Ramirez","popularity":1.215,"profile_path":"/1o0H2J01I404ywsboL8dz6F96p7.jpg","cast_id":1040,"character":"Secretary","credit_id":"52fe4913c3a368484e119233","order":27},{"adult":false,"gender":1,"id":928356,"known_for_department":"Acting","name":"Teri
+        Clark","original_name":"Teri Clark","popularity":1.491,"profile_path":"/aNhDLX6Sbfnll18BiCwSAfjfPHJ.jpg","cast_id":1041,"character":"Night
+        Manager","credit_id":"52fe4913c3a368484e119237","order":28},{"adult":false,"gender":2,"id":1286871,"known_for_department":"Acting","name":"Jarid
+        Faubel","original_name":"Jarid Faubel","popularity":1.827,"profile_path":"/uRW9IcbiDuNOweCliao21YtZddV.jpg","cast_id":1048,"character":"Man
+        on Bus","credit_id":"52fe4913c3a368484e119257","order":29},{"adult":false,"gender":1,"id":1098033,"known_for_department":"Acting","name":"Sara
+        Lindsey","original_name":"Sara Lindsey","popularity":1.551,"profile_path":"/hJBm8M43eV9ugxgWf5P160kMVWR.jpg","cast_id":1049,"character":"Woman
+        on Bus","credit_id":"52fe4913c3a368484e11925b","order":30},{"adult":false,"gender":2,"id":131422,"known_for_department":"Acting","name":"Jace
+        Jeanes","original_name":"Jace Jeanes","popularity":2.262,"profile_path":"/bvlY8BaYdYa4gt9Yq9XhKcKlfsg.jpg","cast_id":1050,"character":"Zec''s
+        Thug","credit_id":"52fe4913c3a368484e11925f","order":31},{"adult":false,"gender":2,"id":1286873,"known_for_department":"Acting","name":"Andrei
+        Runtso","original_name":"Andrei Runtso","popularity":4.474,"profile_path":"/k1FkL6ZjvNFwe1ftSlQEgWP6YmH.jpg","cast_id":1051,"character":"Zec''s
+        Thug","credit_id":"52fe4913c3a368484e119263","order":32},{"adult":false,"gender":2,"id":1272901,"known_for_department":"Acting","name":"Efka
+        Kvaraciejus","original_name":"Efka Kvaraciejus","popularity":7.536,"profile_path":"/xC12DoEHB9h3jJQ5YrJ1WSoLEWs.jpg","cast_id":1052,"character":"Zec''s
+        Thug","credit_id":"52fe4913c3a368484e119267","order":33},{"adult":false,"gender":2,"id":1056052,"known_for_department":"Writing","name":"Lee
+        Child","original_name":"Lee Child","popularity":2.866,"profile_path":"/bJiJb69N2h4MdvdP2PjUpgJdCll.jpg","cast_id":1053,"character":"Desk
+        Sergeant","credit_id":"52fe4913c3a368484e11926b","order":34},{"adult":false,"gender":2,"id":1219514,"known_for_department":"Acting","name":"Tommy
+        Lafitte","original_name":"Tommy Lafitte","popularity":6.695,"profile_path":null,"cast_id":1054,"character":"Man
+        with Ballcap","credit_id":"52fe4913c3a368484e11926f","order":35},{"adult":false,"gender":1,"id":18475,"known_for_department":"Acting","name":"Kristen
+        Dalton","original_name":"Kristen Dalton","popularity":11.339,"profile_path":"/b6j5SfCHCvLULJeLJVTK4aleUBX.jpg","cast_id":1055,"character":"Mindy","credit_id":"52fe4913c3a368484e119273","order":36},{"adult":false,"gender":1,"id":558923,"known_for_department":"Acting","name":"Jordan
+        Trovillion","original_name":"Jordan Trovillion","popularity":2.39,"profile_path":"/aNWwzNTCbDpdE53nXeApJpCXZHd.jpg","cast_id":1056,"character":"Goodwill
+        Cashier","credit_id":"52fe4913c3a368484e119277","order":37},{"adult":false,"gender":1,"id":167110,"known_for_department":"Acting","name":"Annie
+        Kitral","original_name":"Annie Kitral","popularity":1.625,"profile_path":"/tT29WMlcwLMSbJkWZSLvKVB1x7g.jpg","cast_id":1057,"character":"Pawn
+        Shop Cashier","credit_id":"52fe4913c3a368484e11927b","order":38},{"adult":false,"gender":1,"id":1286875,"known_for_department":"Acting","name":"Lissy
+        Gulick","original_name":"Lissy Gulick","popularity":1.798,"profile_path":"/tfvjmN2JrJ1vBDiHFDqjjWDOLUN.jpg","cast_id":1058,"character":"Diner
+        Waitress","credit_id":"52fe4913c3a368484e11927f","order":39},{"adult":false,"gender":1,"id":1286876,"known_for_department":"Acting","name":"Catherine
+        Albers","original_name":"Catherine Albers","popularity":2.644,"profile_path":"/5J7eE32dEuQaI1qtDFENoVw2IRG.jpg","cast_id":1059,"character":"Jeb''s
+        Mom","credit_id":"52fe4913c3a368484e119283","order":40},{"adult":false,"gender":1,"id":1286877,"known_for_department":"Acting","name":"Larissa
+        Emanuele","original_name":"Larissa Emanuele","popularity":2.732,"profile_path":"/uXBpRVWQg4niJZdScLJWhgHo6iE.jpg","cast_id":1060,"character":"Sportsbar
+        Waitress","credit_id":"52fe4913c3a368484e119287","order":41},{"adult":false,"gender":2,"id":1023800,"known_for_department":"Acting","name":"Jason
+        McCune","original_name":"Jason McCune","popularity":1.879,"profile_path":"/vt4gcpotYKgl2HIZxJC0dTp1g0f.jpg","cast_id":1061,"character":"Construction
+        Foreman","credit_id":"52fe4913c3a368484e11928b","order":42},{"adult":false,"gender":2,"id":27687,"known_for_department":"Acting","name":"Shane
+        Callahan","original_name":"Shane Callahan","popularity":1.716,"profile_path":"/65qjLLOA5UShMH6I0k336mpH7HH.jpg","cast_id":1062,"character":"SWAT
+        Guy","credit_id":"52fe4913c3a368484e11928f","order":43},{"adult":false,"gender":2,"id":1286878,"known_for_department":"Acting","name":"Joshua
+        Elijah Reese","original_name":"Joshua Elijah Reese","popularity":6.35,"profile_path":"/oYRnJNGWc9crboqWjg6GgeDe6kV.jpg","cast_id":1063,"character":"SWAT
+        Guy","credit_id":"52fe4913c3a368484e119293","order":44},{"adult":false,"gender":2,"id":1286879,"known_for_department":"Acting","name":"Nathan
+        Hollabaugh","original_name":"Nathan Hollabaugh","popularity":1.561,"profile_path":"/nsCMvGYXRj9FdHHCTPhMNmSkk36.jpg","cast_id":1064,"character":"Cop","credit_id":"52fe4913c3a368484e119297","order":45},{"adult":false,"gender":2,"id":211964,"known_for_department":"Acting","name":"Christopher
+        Stadulis","original_name":"Christopher Stadulis","popularity":2.4,"profile_path":"/oxANKnjL2Ro7NwtxAzAODNMgPHY.jpg","cast_id":1065,"character":"Cop","credit_id":"52fe4913c3a368484e11929b","order":46},{"adult":false,"gender":2,"id":1543874,"known_for_department":"Acting","name":"Joe
+        Fishel","original_name":"Joe Fishel","popularity":8.63,"profile_path":"/Aapim9EAy3vY8eeS4n4tnF4iHsY.jpg","cast_id":1088,"character":"SWAT
+        Officer (uncredited)","credit_id":"5a0de8ef9251416c83002a8a","order":47},{"adult":false,"gender":2,"id":1963149,"known_for_department":"Acting","name":"Robert
+        Liscio","original_name":"Robert Liscio","popularity":0.854,"profile_path":"/b0kc2UhfvYpz6i8yssfKKwhgvWN.jpg","cast_id":1089,"character":"Man
+        in Bar (uncredited)","credit_id":"5a61b355c3a3685383011f29","order":48},{"adult":false,"gender":2,"id":549450,"known_for_department":"Acting","name":"Ronn
+        Surels","original_name":"Ronn Surels","popularity":3.221,"profile_path":"/AhooxXLydxFNYsUzEGjHpNdkzVl.jpg","cast_id":1120,"character":"Jeb''s
+        Wingman (uncredited)","credit_id":"60a6ac74fac502002afefe18","order":49},{"adult":false,"gender":2,"id":3356534,"known_for_department":"Acting","name":"Jackson
+        Nunn","original_name":"Jackson Nunn","popularity":1.742,"profile_path":null,"cast_id":1184,"character":"Passenger
+        / Bar Guy (uncredited)","credit_id":"65737a0ccaab6d00ad2ce45b","order":50}],"crew":[{"adult":false,"gender":2,"id":56737,"known_for_department":"Production","name":"Don
+        Granger","original_name":"Don Granger","popularity":4.04,"profile_path":"/ilhrUzybaDqaZOiaw1M8dzkZ0ZF.jpg","credit_id":"52fe4912c3a368484e1191a5","department":"Production","job":"Producer"},{"adult":false,"gender":2,"id":284,"known_for_department":"Production","name":"Gary
+        Levinsohn","original_name":"Gary Levinsohn","popularity":0.539,"profile_path":null,"credit_id":"52fe4912c3a368484e1191ab","department":"Production","job":"Producer"},{"adult":false,"gender":1,"id":9183,"known_for_department":"Production","name":"Paula
+        Wagner","original_name":"Paula Wagner","popularity":3.144,"profile_path":"/jRnMmW3USte8Qglpe57nJWlA38E.jpg","credit_id":"52fe4912c3a368484e1191b1","department":"Production","job":"Producer"},{"adult":false,"gender":2,"id":500,"known_for_department":"Acting","name":"Tom
+        Cruise","original_name":"Tom Cruise","popularity":105.965,"profile_path":"/3mShHjSQR7NXOVbdTu5rT2Qd0MN.jpg","credit_id":"52fe4912c3a368484e1191b7","department":"Production","job":"Producer"},{"adult":false,"gender":2,"id":1056052,"known_for_department":"Writing","name":"Lee
+        Child","original_name":"Lee Child","popularity":2.866,"profile_path":"/bJiJb69N2h4MdvdP2PjUpgJdCll.jpg","credit_id":"52fe4912c3a368484e1191bd","department":"Writing","job":"Novel"},{"adult":false,"gender":2,"id":62580,"known_for_department":"Sound","name":"Joe
+        Kraemer","original_name":"Joe Kraemer","popularity":1.001,"profile_path":null,"credit_id":"52fe4913c3a368484e1191f1","department":"Sound","job":"Original
+        Music Composer"},{"adult":false,"gender":2,"id":11001,"known_for_department":"Editing","name":"Kevin
+        Stitt","original_name":"Kevin Stitt","popularity":1.921,"profile_path":null,"credit_id":"52fe4913c3a368484e1191f7","department":"Editing","job":"Editor"},{"adult":false,"gender":2,"id":9033,"known_for_department":"Writing","name":"Christopher
+        McQuarrie","original_name":"Christopher McQuarrie","popularity":9.48,"profile_path":"/7FcybX1uFpMKHSI0p15LGPG3O3x.jpg","credit_id":"52fe4913c3a368484e1191fd","department":"Directing","job":"Director"},{"adult":false,"gender":2,"id":9033,"known_for_department":"Writing","name":"Christopher
+        McQuarrie","original_name":"Christopher McQuarrie","popularity":9.48,"profile_path":"/7FcybX1uFpMKHSI0p15LGPG3O3x.jpg","credit_id":"52fe4913c3a368484e119203","department":"Writing","job":"Screenplay"},{"adult":false,"gender":0,"id":1272963,"known_for_department":"Art","name":"George
+        A. Weimerskirch","original_name":"George A. Weimerskirch","popularity":0.006,"profile_path":null,"credit_id":"52fe4913c3a368484e11923d","department":"Art","job":"Art
+        Direction"},{"adult":false,"gender":1,"id":36605,"known_for_department":"Costume
+        & Make-Up","name":"Susan Matheson","original_name":"Susan Matheson","popularity":0.098,"profile_path":null,"credit_id":"52fe4913c3a368484e119243","department":"Costume
+        & Make-Up","job":"Costume Design"},{"adult":false,"gender":1,"id":1275224,"known_for_department":"Acting","name":"Janene
+        Carleton","original_name":"Janene Carleton","popularity":7.625,"profile_path":"/6UJHWZysnE52q4KQRRrZRv3kGZk.jpg","credit_id":"64ebca115258ae014df344b9","department":"Crew","job":"Stunts"},{"adult":false,"gender":1,"id":6044,"known_for_department":"Production","name":"Mindy
+        Marin","original_name":"Mindy Marin","popularity":2.278,"profile_path":null,"credit_id":"534a7e82c3a3682ded001564","department":"Production","job":"Casting"},{"adult":false,"gender":2,"id":60536,"known_for_department":"Crew","name":"Clay
+        Cullen","original_name":"Clay Cullen","popularity":9.232,"profile_path":"/45DYaloAlm6XlUMbOQuHxtI5dpP.jpg","credit_id":"6519e8b4d861af011e6e1513","department":"Crew","job":"Stunt
+        Driver"},{"adult":false,"gender":2,"id":186573,"known_for_department":"Crew","name":"Zack
+        Duhame","original_name":"Zack Duhame","popularity":7.244,"profile_path":"/mI6sdZQaeHDi3jXinS4g1jizywk.jpg","credit_id":"654998cd1ac2927b2dcea59c","department":"Crew","job":"Stunts"},{"adult":false,"gender":1,"id":6922,"known_for_department":"Art","name":"Christa
+        Munro","original_name":"Christa Munro","popularity":0.881,"profile_path":null,"credit_id":"63293839ecbde9007e1496b2","department":"Art","job":"Supervising
+        Art Director"},{"adult":false,"gender":0,"id":3118485,"known_for_department":"Costume
+        & Make-Up","name":"Winfrey Izear","original_name":"Winfrey Izear","popularity":0.028,"profile_path":null,"credit_id":"6329387bb6abc40091ff0995","department":"Costume
+        & Make-Up","job":"Assistant Hairstylist"},{"adult":false,"gender":0,"id":1411066,"known_for_department":"Costume
+        & Make-Up","name":"Sarah Monzani","original_name":"Sarah Monzani","popularity":2.199,"profile_path":null,"credit_id":"6329388b2d3721008ca6a0f9","department":"Costume
+        & Make-Up","job":"Makeup Artist"},{"adult":false,"gender":0,"id":1636655,"known_for_department":"Costume
+        & Make-Up","name":"Marianne Skiba","original_name":"Marianne Skiba","popularity":0.291,"profile_path":null,"credit_id":"6329389adf29450092fa35bf","department":"Costume
+        & Make-Up","job":"Key Makeup Artist"},{"adult":false,"gender":2,"id":113043,"known_for_department":"Sound","name":"Scott
+        Curtis","original_name":"Scott Curtis","popularity":1.54,"profile_path":null,"credit_id":"632938e6ecbde9007b21b13b","department":"Sound","job":"Foley
+        Mixer"},{"adult":false,"gender":0,"id":2034530,"known_for_department":"Sound","name":"Chad
+        Djubek","original_name":"Chad Djubek","popularity":0.01,"profile_path":null,"credit_id":"632938f52dffd8007f218417","department":"Sound","job":"Boom
+        Operator"},{"adult":false,"gender":0,"id":40108,"known_for_department":"Sound","name":"Jim
+        Emswiller","original_name":"Jim Emswiller","popularity":0.491,"profile_path":null,"credit_id":"632939076af9dd008219dff1","department":"Sound","job":"Sound
+        Mixer"},{"adult":false,"gender":0,"id":1390353,"known_for_department":"Sound","name":"Victor
+        Ray Ennis","original_name":"Victor Ray Ennis","popularity":2.517,"profile_path":null,"credit_id":"6329391339b6c3009e99d031","department":"Sound","job":"Foley
+        Editor"},{"adult":false,"gender":2,"id":1737654,"known_for_department":"Sound","name":"Judah
+        Getz","original_name":"Judah Getz","popularity":4.94,"profile_path":null,"credit_id":"6329394cc51acd007d5ded67","department":"Sound","job":"ADR
+        Mixer"},{"adult":false,"gender":2,"id":1302410,"known_for_department":"Sound","name":"Jerry
+        Gilbert","original_name":"Jerry Gilbert","popularity":0.547,"profile_path":null,"credit_id":"63293957e194b0008360d113","department":"Sound","job":"ADR
+        Mixer"},{"adult":false,"gender":0,"id":2067671,"known_for_department":"Sound","name":"Tamas
+        Kurina","original_name":"Tamas Kurina","popularity":0.482,"profile_path":null,"credit_id":"6329396decbde9007e149743","department":"Sound","job":"ADR
+        Engineer"},{"adult":false,"gender":2,"id":1491848,"known_for_department":"Sound","name":"Chris
+        Navarro","original_name":"Chris Navarro","popularity":4.18,"profile_path":"/tKQjPzFDhYVZkzaq2j4NCKb4oVe.jpg","credit_id":"632939872d3721007f0bc524","department":"Sound","job":"ADR
+        Mixer"},{"adult":false,"gender":2,"id":1822628,"known_for_department":"Sound","name":"Michael
+        Piotrowski","original_name":"Michael Piotrowski","popularity":0.797,"profile_path":null,"credit_id":"6329399ffd6300007a7cb0c1","department":"Sound","job":"Boom
+        Operator"},{"adult":false,"gender":0,"id":2054489,"known_for_department":"Sound","name":"Kelly
+        Roofner","original_name":"Kelly Roofner","popularity":0.01,"profile_path":null,"credit_id":"632939d01f98d1007be05a54","department":"Sound","job":"Utility
+        Sound"},{"adult":false,"gender":2,"id":3595322,"known_for_department":"Sound","name":"Amishjim
+        Schulze","original_name":"Amishjim Schulze","popularity":0.452,"profile_path":null,"credit_id":"632939e61f98d1007be05a62","department":"Sound","job":"Utility
+        Sound"},{"adult":false,"gender":2,"id":1417974,"known_for_department":"Sound","name":"David
+        Stanke","original_name":"David Stanke","popularity":0.951,"profile_path":null,"credit_id":"632939f239b6c3009e99d098","department":"Sound","job":"First
+        Assistant Sound Editor"},{"adult":false,"gender":2,"id":1406389,"known_for_department":"Sound","name":"Bruce
+        Tanis","original_name":"Bruce Tanis","popularity":1.667,"profile_path":null,"credit_id":"63293a04b6abc4007ad95564","department":"Sound","job":"Sound
+        Effects Editor"},{"adult":false,"gender":0,"id":1390524,"known_for_department":"Sound","name":"Jay
+        Wilkinson","original_name":"Jay Wilkinson","popularity":2.982,"profile_path":null,"credit_id":"63293a11efea7a0082ea1ace","department":"Sound","job":"Sound
+        Editor"},{"adult":false,"gender":2,"id":1414549,"known_for_department":"Sound","name":"Scott
+        Wolf","original_name":"Scott Wolf","popularity":0.713,"profile_path":null,"credit_id":"63293a1cef9d72007b1ca236","department":"Sound","job":"Sound
+        Editor"},{"adult":false,"gender":0,"id":1525667,"known_for_department":"Visual
+        Effects","name":"Juan Álvarez","original_name":"Juan Álvarez","popularity":0.192,"profile_path":null,"credit_id":"63293a46b6abc4007ad9558a","department":"Visual
+        Effects","job":"VFX Artist"},{"adult":false,"gender":1,"id":2542138,"known_for_department":"Production","name":"Caitlin
+        Atherton","original_name":"Caitlin Atherton","popularity":0.013,"profile_path":null,"credit_id":"63293a6e2d3721007cf7be27","department":"Visual
+        Effects","job":"Visual Effects Coordinator"},{"adult":false,"gender":0,"id":1458105,"known_for_department":"Crew","name":"Adam
+        Avery","original_name":"Adam Avery","popularity":0.57,"profile_path":null,"credit_id":"63293a7eefea7a007aaa9899","department":"Crew","job":"Visual
+        Effects Editor"},{"adult":false,"gender":0,"id":1466193,"known_for_department":"Crew","name":"Charles
+        Baden","original_name":"Charles Baden","popularity":0.003,"profile_path":null,"credit_id":"63293a98d7f465008e57d70a","department":"Crew","job":"Compositor"},{"adult":false,"gender":0,"id":1988386,"known_for_department":"Visual
+        Effects","name":"Cody Brunty","original_name":"Cody Brunty","popularity":0.001,"profile_path":null,"credit_id":"63293aaab6abc4007d39d95b","department":"Visual
+        Effects","job":"VFX Artist"},{"adult":false,"gender":2,"id":1403503,"known_for_department":"Visual
+        Effects","name":"Daniel Chavez","original_name":"Daniel Chavez","popularity":1.48,"profile_path":null,"credit_id":"63293ac1af85de00844b8df8","department":"Visual
+        Effects","job":"Visual Effects Producer"},{"adult":false,"gender":2,"id":24527,"known_for_department":"Visual
+        Effects","name":"Chris Ervin","original_name":"Chris Ervin","popularity":0.983,"profile_path":null,"credit_id":"63293af8c51acd00826ca737","department":"Visual
+        Effects","job":"VFX Artist"},{"adult":false,"gender":0,"id":1335151,"known_for_department":"Visual
+        Effects","name":"Bryan Godwin","original_name":"Bryan Godwin","popularity":1.187,"profile_path":null,"credit_id":"63293b41ef9d72007e33cd71","department":"Visual
+        Effects","job":"Visual Effects Supervisor"},{"adult":false,"gender":1,"id":1552381,"known_for_department":"Visual
+        Effects","name":"Rachel Faith Hanson","original_name":"Rachel Faith Hanson","popularity":0.651,"profile_path":null,"credit_id":"63293b561f98d1007be05af8","department":"Visual
+        Effects","job":"Visual Effects Coordinator"},{"adult":false,"gender":0,"id":2121489,"known_for_department":"Crew","name":"Travis
+        Wade Ivy","original_name":"Travis Wade Ivy","popularity":0.028,"profile_path":null,"credit_id":"63293b726af9dd007a462e07","department":"Crew","job":"Compositor"},{"adult":false,"gender":0,"id":2078018,"known_for_department":"Visual
+        Effects","name":"James Kawano","original_name":"James Kawano","popularity":0.85,"profile_path":null,"credit_id":"63293b921f98d1007be05b1a","department":"Visual
+        Effects","job":"Rotoscoping Artist"},{"adult":false,"gender":0,"id":1586400,"known_for_department":"Visual
+        Effects","name":"Harimander Singh Khalsa","original_name":"Harimander Singh
+        Khalsa","popularity":0.078,"profile_path":null,"credit_id":"63293ba21f98d10092315aa3","department":"Visual
+        Effects","job":"Compositing Supervisor"},{"adult":false,"gender":0,"id":1436188,"known_for_department":"Visual
+        Effects","name":"Bill Kunin","original_name":"Bill Kunin","popularity":0.057,"profile_path":null,"credit_id":"63293bb152497800838637a1","department":"Visual
+        Effects","job":"Visual Effects Supervisor"},{"adult":false,"gender":0,"id":1702624,"known_for_department":"Visual
+        Effects","name":"Valy Lungoccia","original_name":"Valy Lungoccia","popularity":0.099,"profile_path":null,"credit_id":"63293bda8a0e9b007a607627","department":"Visual
+        Effects","job":"Digital Compositor"},{"adult":false,"gender":0,"id":1568470,"known_for_department":"Visual
+        Effects","name":"Mare McIntosh","original_name":"Mare McIntosh","popularity":1.018,"profile_path":null,"credit_id":"63293bf1b6abc4007d39d9e1","department":"Visual
+        Effects","job":"CGI Director"},{"adult":false,"gender":0,"id":1583079,"known_for_department":"Visual
+        Effects","name":"Roger Mocenigo","original_name":"Roger Mocenigo","popularity":0.437,"profile_path":null,"credit_id":"63293bfddf2945007bac8364","department":"Crew","job":"Compositor"},{"adult":false,"gender":0,"id":1950361,"known_for_department":"Crew","name":"Shoban
+        Narayanan","original_name":"Shoban Narayanan","popularity":0.802,"profile_path":null,"credit_id":"63293c09a3b5e6007ddf279e","department":"Crew","job":"Compositor"},{"adult":false,"gender":0,"id":1721444,"known_for_department":"Visual
+        Effects","name":"Denise O''Neill","original_name":"Denise O''Neill","popularity":0.06,"profile_path":null,"credit_id":"63293c1acaab6d007dcc22b8","department":"Visual
+        Effects","job":"2D Supervisor"},{"adult":false,"gender":0,"id":2935207,"known_for_department":"Visual
+        Effects","name":"Jale Parsons","original_name":"Jale Parsons","popularity":1.1,"profile_path":null,"credit_id":"63293c31ecbde9007e149862","department":"Visual
+        Effects","job":"Digital Compositor"},{"adult":false,"gender":0,"id":2041319,"known_for_department":"Editing","name":"Mitch
+        Paulson","original_name":"Mitch Paulson","popularity":0.608,"profile_path":null,"credit_id":"63293c45efea7a0082ea1bd7","department":"Editing","job":"Digital
+        Colorist"},{"adult":false,"gender":0,"id":1434565,"known_for_department":"Visual
+        Effects","name":"Joel Sevilla","original_name":"Joel Sevilla","popularity":0.168,"profile_path":null,"credit_id":"63293c631f98d1007be05b72","department":"Crew","job":"CG
+        Supervisor"},{"adult":false,"gender":2,"id":1673231,"known_for_department":"Visual
+        Effects","name":"Doug Spilatro","original_name":"Doug Spilatro","popularity":2.23,"profile_path":null,"credit_id":"63293c6defea7a007aaa9961","department":"Visual
+        Effects","job":"VFX Artist"},{"adult":false,"gender":2,"id":1547193,"known_for_department":"Visual
+        Effects","name":"Shane Strickman","original_name":"Shane Strickman","popularity":0.036,"profile_path":null,"credit_id":"63293c80ef9d72007b1ca31f","department":"Visual
+        Effects","job":"Senior Visual Effects Supervisor"},{"adult":false,"gender":0,"id":1434564,"known_for_department":"Crew","name":"Josh
+        Sutherland","original_name":"Josh Sutherland","popularity":2.341,"profile_path":null,"credit_id":"63293c902dffd8007a396e33","department":"Crew","job":"Visual
+        Effects Editor"},{"adult":false,"gender":0,"id":80830,"known_for_department":"Visual
+        Effects","name":"Mike Uguccioni","original_name":"Mike Uguccioni","popularity":0.99,"profile_path":null,"credit_id":"63293ca7caab6d007dcc2310","department":"Visual
+        Effects","job":"Visual Effects Supervisor"},{"adult":false,"gender":0,"id":1410302,"known_for_department":"Visual
+        Effects","name":"David Van Dyke","original_name":"David Van Dyke","popularity":0.594,"profile_path":null,"credit_id":"63293cc1ef9d72007e33ce18","department":"Crew","job":"Executive
+        Visual Effects Producer"},{"adult":false,"gender":0,"id":2053858,"known_for_department":"Costume
+        & Make-Up","name":"Melanie Cargioli","original_name":"Melanie Cargioli","popularity":0.073,"profile_path":null,"credit_id":"63293d112d3721007f0bc6ab","department":"Costume
+        & Make-Up","job":"Set Costumer"},{"adult":false,"gender":0,"id":1931332,"known_for_department":"Costume
+        & Make-Up","name":"Michelle Christensen","original_name":"Michelle Christensen","popularity":0.029,"profile_path":null,"credit_id":"63293d23a3b5e6007ddf280f","department":"Costume
+        & Make-Up","job":"Key Costumer"},{"adult":false,"gender":0,"id":1726764,"known_for_department":"Costume
+        & Make-Up","name":"James Eidel","original_name":"James Eidel","popularity":0.238,"profile_path":null,"credit_id":"63293d328a0e9b007a6076bc","department":"Costume
+        & Make-Up","job":"Costumer"},{"adult":false,"gender":0,"id":1395030,"known_for_department":"Costume
+        & Make-Up","name":"Alison Evans","original_name":"Alison Evans","popularity":0.99,"profile_path":null,"credit_id":"63293d442dffd8007a396e83","department":"Costume
+        & Make-Up","job":"Set Costumer"},{"adult":false,"gender":0,"id":1931334,"known_for_department":"Costume
+        & Make-Up","name":"Kelli French","original_name":"Kelli French","popularity":0.046,"profile_path":null,"credit_id":"63293d4e2d3721007cf7bf5d","department":"Costume
+        & Make-Up","job":"Costumer"},{"adult":false,"gender":0,"id":1530690,"known_for_department":"Costume
+        & Make-Up","name":"Elaine Perlmann","original_name":"Elaine Perlmann","popularity":0.189,"profile_path":null,"credit_id":"63293d5d39b6c3009e99d24a","department":"Costume
+        & Make-Up","job":"Assistant Costume Designer"},{"adult":false,"gender":0,"id":2053857,"known_for_department":"Costume
+        & Make-Up","name":"Virginia Smith Phillips","original_name":"Virginia Smith
+        Phillips","popularity":0.001,"profile_path":null,"credit_id":"63293d6fef9d720092191357","department":"Costume
+        & Make-Up","job":"Key Set Costumer"},{"adult":false,"gender":0,"id":2244091,"known_for_department":"Costume
+        & Make-Up","name":"Danny Vick","original_name":"Danny Vick","popularity":0.064,"profile_path":null,"credit_id":"63293d79caab6d007adb500f","department":"Costume
+        & Make-Up","job":"Set Costumer"},{"adult":false,"gender":1,"id":962165,"known_for_department":"Costume
+        & Make-Up","name":"Nancy Thompson","original_name":"Nancy Thompson","popularity":0.162,"profile_path":null,"credit_id":"63293d86efea7a007dce9177","department":"Costume
+        & Make-Up","job":"Costumer"},{"adult":false,"gender":0,"id":2001712,"known_for_department":"Crew","name":"Greg
+        Loskorn","original_name":"Greg Loskorn","popularity":0.2,"profile_path":null,"credit_id":"63293dd3af85de007c7eb3c3","department":"Crew","job":"Score
+        Engineer"},{"adult":false,"gender":2,"id":162577,"known_for_department":"Crew","name":"Peter
+        Epstein","original_name":"Peter Epstein","popularity":3.926,"profile_path":"/qXKeOljIVFhHTqMcqWc3YG5UC8e.jpg","credit_id":"6562a290a6c10401382a1dc2","department":"Crew","job":"Stunts"},{"adult":false,"gender":2,"id":8750,"known_for_department":"Camera","name":"Caleb
+        Deschanel","original_name":"Caleb Deschanel","popularity":6.574,"profile_path":"/sY2ZKhy94GRy7CK2xseLtC67QjN.jpg","credit_id":"56617f5d925141790a006fa2","department":"Camera","job":"Director
+        of Photography"},{"adult":false,"gender":2,"id":9967,"known_for_department":"Art","name":"James
+        D. Bissell","original_name":"James D. Bissell","popularity":1.368,"profile_path":"/1rKagQ6kZnEWaa8CJaoWTLQUkBh.jpg","credit_id":"56617fd792514179130070a1","department":"Art","job":"Production
+        Design"},{"adult":false,"gender":1,"id":1347761,"known_for_department":"Directing","name":"Jessica
+        Lichtner","original_name":"Jessica Lichtner","popularity":0.647,"profile_path":null,"credit_id":"56617ff3c3a36875e20070d4","department":"Directing","job":"Script
+        Supervisor"},{"adult":false,"gender":0,"id":1544666,"known_for_department":"Sound","name":"Denise
+        Luiso","original_name":"Denise Luiso","popularity":0.111,"profile_path":null,"credit_id":"56618017c3a36875f900761f","department":"Sound","job":"Music
+        Supervisor"},{"adult":false,"gender":2,"id":10958,"known_for_department":"Art","name":"Douglas
+        A. Mowat","original_name":"Douglas A. Mowat","popularity":2.089,"profile_path":null,"credit_id":"56618036c3a36875f1006fbc","department":"Art","job":"Set
+        Decoration"},{"adult":false,"gender":1,"id":1421952,"known_for_department":"Camera","name":"Karen
+        Ballard","original_name":"Karen Ballard","popularity":1.212,"profile_path":null,"credit_id":"5661804d925141790a006fcb","department":"Camera","job":"Still
+        Photographer"},{"adult":false,"gender":1,"id":1401687,"known_for_department":"Sound","name":"Anna
+        Behlmer","original_name":"Anna Behlmer","popularity":3.071,"profile_path":"/kUsjqvtj653USV4FXxJmPiqJCW4.jpg","credit_id":"5661806ac3a36875e40069ef","department":"Sound","job":"Sound
+        Re-Recording Mixer"},{"adult":false,"gender":2,"id":74978,"known_for_department":"Sound","name":"Terry
+        Porter","original_name":"Terry Porter","popularity":2.078,"profile_path":null,"credit_id":"56618079c3a36875e40069f3","department":"Sound","job":"Sound
+        Re-Recording Mixer"},{"adult":false,"gender":0,"id":1334485,"known_for_department":"Sound","name":"Alan
+        Rankin","original_name":"Alan Rankin","popularity":2.171,"profile_path":null,"credit_id":"5661808f9251417904006ce6","department":"Sound","job":"Supervising
+        Sound Editor"},{"adult":false,"gender":2,"id":15332,"known_for_department":"Sound","name":"Mark
+        P. Stoeckinger","original_name":"Mark P. Stoeckinger","popularity":1.093,"profile_path":null,"credit_id":"566180a392514179130070d2","department":"Sound","job":"Supervising
+        Sound Editor"},{"adult":false,"gender":1,"id":1409819,"known_for_department":"Costume
+        & Make-Up","name":"Angel De Angelis","original_name":"Angel De Angelis","popularity":1.831,"profile_path":null,"credit_id":"566180f3c3a36875f4006bcf","department":"Costume
+        & Make-Up","job":"Hair Department Head"},{"adult":false,"gender":0,"id":1317305,"known_for_department":"Costume
+        & Make-Up","name":"Trefor Proud","original_name":"Trefor Proud","popularity":1.103,"profile_path":null,"credit_id":"566181109251417906006edf","department":"Costume
+        & Make-Up","job":"Makeup Department Head"},{"adult":false,"gender":0,"id":1544667,"known_for_department":"Costume
+        & Make-Up","name":"Nancy Keslar","original_name":"Nancy Keslar","popularity":1.442,"profile_path":null,"credit_id":"56618129c3a36875f9007653","department":"Costume
+        & Make-Up","job":"Key Hair Stylist"},{"adult":false,"gender":0,"id":1323077,"known_for_department":"Costume
+        & Make-Up","name":"Charlene Amateau","original_name":"Charlene Amateau","popularity":0.7,"profile_path":null,"credit_id":"5661816e925141790c006c65","department":"Costume
+        & Make-Up","job":"Costume Supervisor"},{"adult":false,"gender":1,"id":1465333,"known_for_department":"Production","name":"Lindsay
+        Feldman","original_name":"Lindsay Feldman","popularity":0.098,"profile_path":null,"credit_id":"5661818fc3a36875e4006a32","department":"Production","job":"Production
+        Coordinator"},{"adult":false,"gender":2,"id":1347755,"known_for_department":"Sound","name":"John
+        Finklea","original_name":"John Finklea","popularity":2.258,"profile_path":null,"credit_id":"566181ca925141790a007087","department":"Sound","job":"Music
+        Editor"},{"adult":false,"gender":2,"id":1149583,"known_for_department":"Camera","name":"BJ
+        McDonnell","original_name":"BJ McDonnell","popularity":2.703,"profile_path":"/sBgtacbNgUs1gN3jFpshUqrIWk7.jpg","credit_id":"566182089251417918006c21","department":"Camera","job":"Steadicam
+        Operator"},{"adult":false,"gender":2,"id":1149583,"known_for_department":"Camera","name":"BJ
+        McDonnell","original_name":"BJ McDonnell","popularity":2.703,"profile_path":"/sBgtacbNgUs1gN3jFpshUqrIWk7.jpg","credit_id":"56618230c3a36875ed00687d","department":"Camera","job":"Camera
+        Operator"},{"adult":false,"gender":1,"id":995358,"known_for_department":"Acting","name":"Alice
+        Rietveld","original_name":"Alice Rietveld","popularity":4.752,"profile_path":"/41YzcR3uqLsTxsOcB9hmgEViHnk.jpg","credit_id":"6594ccfbea37e007534b901b","department":"Crew","job":"Stunts"},{"adult":false,"gender":1,"id":1456720,"known_for_department":"Crew","name":"Amy
+        Lynn Tuttle","original_name":"Amy Lynn Tuttle","popularity":1.827,"profile_path":"/vIkSxYLCDjE6KhYK9UDK0MP7Rav.jpg","credit_id":"6594d09b992fe622e61e6c77","department":"Crew","job":"Stunts"},{"adult":false,"gender":2,"id":92499,"known_for_department":"Crew","name":"Casey
+        O''Neill","original_name":"Casey O''Neill","popularity":3.457,"profile_path":"/aoT1prEjm2i4BYk2UUwYYhUtwTZ.jpg","credit_id":"658f3551efcea9018ef9e099","department":"Crew","job":"Stunt
+        Double"},{"adult":false,"gender":0,"id":1407019,"known_for_department":"Crew","name":"Mark
+        Edward Wright","original_name":"Mark Edward Wright","popularity":1.716,"profile_path":null,"credit_id":"5712601cc3a3686636003473","department":"Crew","job":"Visual
+        Effects Editor"},{"adult":false,"gender":0,"id":1457666,"known_for_department":"Editing","name":"Kris
+        Cole","original_name":"Kris Cole","popularity":0.515,"profile_path":null,"credit_id":"570f0c1592514133f300018b","department":"Editing","job":"Assistant
+        Editor"},{"adult":false,"gender":2,"id":1549439,"known_for_department":"Camera","name":"Markus
+        Mentzer","original_name":"Markus Mentzer","popularity":0.995,"profile_path":"/wNlX24rSyLVPHG8Gf93Kzvz7x6M.jpg","credit_id":"63d96507a9117f007976e55c","department":"Camera","job":"First
+        Assistant \"C\" Camera"},{"adult":false,"gender":2,"id":1031469,"known_for_department":"Crew","name":"Eddie
+        Perez","original_name":"Eddie Perez","popularity":3.783,"profile_path":"/lJ0584zfHNwj2QywbBvF7TcEy8w.jpg","credit_id":"6631ac6ca3770a01295bb200","department":"Crew","job":"Stunts"},{"adult":false,"gender":1,"id":2127760,"known_for_department":"Crew","name":"Kimberly
+        Shannon Murphy","original_name":"Kimberly Shannon Murphy","popularity":7.752,"profile_path":"/zgpnLxNOC9PhQTJLqWnfe4yWIfG.jpg","credit_id":"645fe447e3fa2f016620a1cb","department":"Crew","job":"Stunts"},{"adult":false,"gender":2,"id":1511086,"known_for_department":"Sound","name":"Kelly
+        Oxford","original_name":"Kelly Oxford","popularity":0.785,"profile_path":null,"credit_id":"5af9f2c00e0a263b82002b18","department":"Sound","job":"ADR
+        Supervisor"},{"adult":false,"gender":1,"id":1364410,"known_for_department":"Sound","name":"Julie
+        Feiner","original_name":"Julie Feiner","popularity":3.347,"profile_path":null,"credit_id":"5af9f2d80e0a263b7e002a1a","department":"Sound","job":"Dialogue
+        Editor"},{"adult":false,"gender":0,"id":297,"known_for_department":"Sound","name":"Jay
+        Meagher","original_name":"Jay Meagher","popularity":1.592,"profile_path":null,"credit_id":"5af9f2fdc3a3680e83002798","department":"Sound","job":"Sound
+        Mixer"},{"adult":false,"gender":2,"id":1546854,"known_for_department":"Art","name":"Peter
+        Gelfman","original_name":"Peter Gelfman","popularity":0.745,"profile_path":null,"credit_id":"5af9f31ac3a3680e65002d35","department":"Art","job":"Property
+        Master"},{"adult":false,"gender":2,"id":44006,"known_for_department":"Crew","name":"Paul
+        Jennings","original_name":"Paul Jennings","popularity":4.332,"profile_path":null,"credit_id":"5af9f364c3a3680e92002378","department":"Directing","job":"Second
+        Unit Director"},{"adult":false,"gender":2,"id":44006,"known_for_department":"Crew","name":"Paul
+        Jennings","original_name":"Paul Jennings","popularity":4.332,"profile_path":null,"credit_id":"5af9f395c3a3680e6e0021b3","department":"Crew","job":"Stunt
+        Coordinator"},{"adult":false,"gender":0,"id":1611976,"known_for_department":"Art","name":"Jenn
+        Albaugh","original_name":"Jenn Albaugh","popularity":0.392,"profile_path":null,"credit_id":"5af9f3e792514142970026db","department":"Art","job":"Art
+        Department Coordinator"},{"adult":false,"gender":0,"id":29608,"known_for_department":"Production","name":"Jake
+        Myers","original_name":"Jake Myers","popularity":1.392,"profile_path":null,"credit_id":"5b0eb1280e0a2671b400588b","department":"Production","job":"Executive
+        Producer"},{"adult":false,"gender":2,"id":82197,"known_for_department":"Production","name":"Ken
+        Kamins","original_name":"Ken Kamins","popularity":1.726,"profile_path":null,"credit_id":"5b0eb136c3a368287000471f","department":"Production","job":"Executive
+        Producer"},{"adult":false,"gender":2,"id":56461,"known_for_department":"Production","name":"Kevin
+        J. Messick","original_name":"Kevin J. Messick","popularity":1.197,"profile_path":"/pz8NSCCp146P4MxDXdtBcgX2DxD.jpg","credit_id":"5b0eb1760e0a2671b40058a2","department":"Production","job":"Executive
+        Producer"},{"adult":false,"gender":2,"id":58433,"known_for_department":"Production","name":"David
+        Ellison","original_name":"David Ellison","popularity":5.39,"profile_path":"/jOhjFZWW2KqsOzm4IiE71FHmcIf.jpg","credit_id":"5b0eb18592514153a800518c","department":"Production","job":"Executive
+        Producer"},{"adult":false,"gender":1,"id":29018,"known_for_department":"Production","name":"Dana
+        Goldberg","original_name":"Dana Goldberg","popularity":5.209,"profile_path":"/AtiT0HTrrrvVVjZgOXpxKxVFyAb.jpg","credit_id":"5b0eb1940e0a2671ae005c54","department":"Production","job":"Executive
+        Producer"},{"adult":false,"gender":2,"id":41330,"known_for_department":"Production","name":"Paul
+        Schwake","original_name":"Paul Schwake","popularity":0.351,"profile_path":null,"credit_id":"5b0eb1a592514153d1005c1c","department":"Production","job":"Executive
+        Producer"},{"adult":false,"gender":2,"id":35546,"known_for_department":"Crew","name":"Chris
+        Palermo","original_name":"Chris Palermo","popularity":4.963,"profile_path":"/ni3d2IaSUk651Yq9HWfoa1Pezya.jpg","credit_id":"64a06c9dc390c5014e3c3f56","department":"Crew","job":"Stunt
+        Driver"},{"adult":false,"gender":2,"id":83093,"known_for_department":"Crew","name":"Jimmy
+        N. Roberts","original_name":"Jimmy N. Roberts","popularity":3.401,"profile_path":"/voJPkN18NYreFrwhhhDKC2hG83r.jpg","credit_id":"64cfbb214d679100acf0db8b","department":"Crew","job":"Stunt
+        Driver"},{"adult":false,"gender":1,"id":2069678,"known_for_department":"Production","name":"Jennifer
+        Scudder Trent","original_name":"Jennifer Scudder Trent","popularity":4.007,"profile_path":"/e833KANGrVI1q7kIoQpiLUfkrb.jpg","credit_id":"66c766f5aca98af48bca8c5f","department":"Production","job":"Post
+        Production Coordinator"},{"adult":false,"gender":2,"id":1631516,"known_for_department":"Production","name":"Cliff
+        Lanning","original_name":"Cliff Lanning","popularity":4.234,"profile_path":"/fMbBthNyuTtB2bayJHSrmrWIR0G.jpg","credit_id":"5ea5f19c9c24fc001dd4f5c3","department":"Production","job":"Associate
+        Producer"},{"adult":false,"gender":0,"id":2215696,"known_for_department":"Production","name":"Kirby
+        Adams","original_name":"Kirby Adams","popularity":0.687,"profile_path":null,"credit_id":"5ea5f1cea2d2e90021de4313","department":"Production","job":"Executive
+        In Charge Of Production"},{"adult":false,"gender":1,"id":86907,"known_for_department":"Production","name":"Susan
+        E. Novick","original_name":"Susan E. Novick","popularity":2.225,"profile_path":null,"credit_id":"5ea5f1ec7304b5002565362a","department":"Crew","job":"Post
+        Production Supervisor"},{"adult":false,"gender":0,"id":58357,"known_for_department":"Production","name":"Dana
+        Robin","original_name":"Dana Robin","popularity":1.723,"profile_path":null,"credit_id":"5ea5f206713ed400245485dd","department":"Production","job":"Unit
+        Production Manager"},{"adult":false,"gender":2,"id":1648111,"known_for_department":"Production","name":"Andrew
+        Saxe","original_name":"Andrew Saxe","popularity":0.805,"profile_path":null,"credit_id":"5ea5f22318b75100253907ca","department":"Production","job":"Unit
+        Production Manager"},{"adult":false,"gender":0,"id":2615927,"known_for_department":"Directing","name":"Mikey
+        Eberle","original_name":"Mikey Eberle","popularity":0.049,"profile_path":null,"credit_id":"5ea5f25918b75100253907e0","department":"Directing","job":"Second
+        Second Assistant Director"},{"adult":false,"gender":0,"id":1760513,"known_for_department":"Directing","name":"David
+        Kelley","original_name":"David Kelley","popularity":1.641,"profile_path":null,"credit_id":"5ea5f2857304b5002565365c","department":"Directing","job":"Second
+        Assistant Director"},{"adult":false,"gender":2,"id":1631516,"known_for_department":"Production","name":"Cliff
+        Lanning","original_name":"Cliff Lanning","popularity":4.234,"profile_path":"/fMbBthNyuTtB2bayJHSrmrWIR0G.jpg","credit_id":"5ea5f29618b751001d3904dc","department":"Directing","job":"First
+        Assistant Director"},{"adult":false,"gender":1,"id":1544735,"known_for_department":"Directing","name":"Deanna
+        Leslie Kelly","original_name":"Deanna Leslie Kelly","popularity":1.548,"profile_path":null,"credit_id":"5ea5f2addb72c0001dbdb95d","department":"Directing","job":"Second
+        Assistant Director"},{"adult":false,"gender":0,"id":1228698,"known_for_department":"Directing","name":"Steve
+        Love","original_name":"Steve Love","popularity":2.73,"profile_path":null,"credit_id":"5ea5f2bf7390c0001fa66f7a","department":"Directing","job":"First
+        Assistant Director"},{"adult":false,"gender":0,"id":2488166,"known_for_department":"Directing","name":"Dixon
+        McPhillips","original_name":"Dixon McPhillips","popularity":0.137,"profile_path":null,"credit_id":"5ea5f2ce6d1bb20024a4d90a","department":"Directing","job":"Second
+        Unit Director"},{"adult":false,"gender":0,"id":2615929,"known_for_department":"Directing","name":"Walter
+        E. Myal","original_name":"Walter E. Myal","popularity":0.074,"profile_path":null,"credit_id":"5ea5f2deb39e350021e93613","department":"Directing","job":"Second
+        Second Assistant Director"},{"adult":false,"gender":0,"id":1631609,"known_for_department":"Directing","name":"Rhys
+        Summerhayes","original_name":"Rhys Summerhayes","popularity":1.236,"profile_path":null,"credit_id":"5ea5f2f25a4690002511ed10","department":"Directing","job":"Second
+        Assistant Director"},{"adult":false,"gender":0,"id":60206,"known_for_department":"Production","name":"Eric
+        Yellin","original_name":"Eric Yellin","popularity":0.773,"profile_path":null,"credit_id":"5ea5f3077390c0001da673dc","department":"Directing","job":"Assistant
+        Director"},{"adult":false,"gender":0,"id":1391606,"known_for_department":"Directing","name":"Marvel
+        Wakefield","original_name":"Marvel Wakefield","popularity":0.868,"profile_path":null,"credit_id":"5ea5f3405a4690001d1203c0","department":"Directing","job":"Script
+        Supervisor"},{"adult":false,"gender":2,"id":549450,"known_for_department":"Acting","name":"Ronn
+        Surels","original_name":"Ronn Surels","popularity":3.221,"profile_path":"/AhooxXLydxFNYsUzEGjHpNdkzVl.jpg","credit_id":"5fce524a6c0e4f003ebca232","department":"Crew","job":"Stunts"}]}'
+  recorded_at: Fri, 06 Dec 2024 22:03:22 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/75780/reviews
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_API_KEY>
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 06 Dec 2024 22:03:22 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=13819
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - '09489bf68ec06b26022c1410f4a7c98b'
+      X-Memc-Age:
+      - '9049'
+      X-Memc-Expires:
+      - '13819'
+      Etag:
+      - W/"d7b162c0725d11fb66b0306f56fef29c"
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 786e78cb5cbe5eadde8b1e6951bf8a60.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - sx_JkDyszFk38KTfvyCCZVrc00LIwSuxACU5S8lJNmMdAQtmN801Hw==
+    body:
+      encoding: UTF-8
+      string: '{"id":75780,"page":1,"results":[{"author":"Kenneth Axel Carlsson","author_details":{"name":"Kenneth
+        Axel Carlsson","username":"brekkil","avatar_path":null,"rating":3.0},"content":"A
+        man shoots six people in a park, seemingly at random. The evidence is obvious
+        and the police catch him short after. When asked about the murders, all he
+        says (or rather writes) is \"Get Jack Reacher\". They do, and while Jack thinks
+        he is only here to bury him (whatever that actually means), he soon finds
+        out that the rabbit hole goes a bit further than he originally thought. Now
+        Jack is looking to put together the pieces of a much larger puzzle.\r\n\r\nThis
+        movie has the ring of a simple action movie with a small twist. The twist,
+        actually, is quite obvious if you think about what is happening in the beginning
+        of the movie.\r\n\r\nI remember seeing the trailer a long time ago, and it
+        painted a picture of a comedy, but this movie is not that. It might have one
+        or two funny fight scenes (and dialogue with Robert Duvall), but it is actually
+        quite dark. This is kinda what saved the movie a bit for me, having judged
+        it beforehand.\r\n\r\nTom Cruise is... Tom Cruise. At least in the way that
+        we have seen him protrayed in the most recent years. The silent, cool guy
+        who knows how to handle the problems, and who seems to always be one step
+        ahead of everyone. I am not a big fan of this guy, and therefore, ultimately,
+        not a big fan of Jack Reacher, however, it is slightly better than I thought
+        it would be. And Werner Herzog has a nice little cameo, that movie aficionados
+        will surely enjoy, being the great director that he is.\r\n\r\n_Last words...
+        if you like Tom Cruise, go for it. If you like a nice organized action movie,
+        much like the many Bourne movies... go for it. If you want more than superficial
+        characters and a very straightforward plot, this is not the movie for you._","created_at":"2014-12-26
+        22:34:26 UTC","id":"549de27292514131320065ea","updated_at":"2021-06-23 15:57:31
+        UTC","url":"https://www.themoviedb.org/review/549de27292514131320065ea"},{"author":"John
+        Chard","author_details":{"name":"","username":"John Chard","avatar_path":"/utEXl2EDiXBK6f41wCLsvprvMg4.jpg","rating":8.0},"content":"You
+        think I''m a hero? I am not a hero. And if you''re smart, that scares you.
+        Because I have nothing to lose.\r\n\r\nIt got off on the wrong foot, fans
+        of the Lee Child novels were up in arms about the casting of Tom Cruise in
+        the title role. He didn''t fit the profile it was said, scorn was poured on
+        the film, quite often by people who hadn''t even seen it! So how refreshing
+        to find that since I personally have no affinity to the Child books, and having
+        never read anything by the author, I found a wonderfully old fashioned thriller.\r\n\r\nReacher
+        the character is a damn fine creation, an ex military bad ass who doesn''t
+        get found unless he wants to get found. He gets involved with jobs that need
+        solving, utilising his special skills to close out the mysteries. Here he
+        pitches up along side defence attorney Helen Rodin (Rosamund Pike) when an
+        ex army sniper apparently at random kills five people and then mentions Reacher''s
+        name during interrogation. Cue twists and turns, rocks upturned for covert
+        clues and a shady road to be trawled to get to the crux of the matter.\r\n\r\nCruise
+        as Reacher is superb, where under the astute directing and writing of Christopher
+        McQuarrie we are left in no doubt this is a cool no nonsense hard man, loved
+        by the ladies and feared by not just the crims, but also the law authorities.
+        None of which is overkilled, it''s subtle in execution, McQuarrie doesn''t
+        need to turn his film into a blitzkrieg of CGI blunderbuss multiplex pandering.
+        Action is smartly staged, the violence brutal without being course, while
+        the story is delightful in how it gleefully wrong foots the viewers in plot
+        dynamics and sly humour.\r\n\r\nThe deal is closed out via the sterling supporting
+        turns to Cruise, with Pike, Robert Duvall, Werner Herzog and Jai Courtney
+        adding considerably to this splendid Cruise and McQuarrie broth. In spite
+        of divisive reviews and reports, Jack Reacher in filmic form has risen above
+        that to become a success. Hooray! 7.5/10","created_at":"2018-12-16 11:00:12
+        UTC","id":"5c16303c0e0a2641003b77e7","updated_at":"2024-05-16 15:22:19 UTC","url":"https://www.themoviedb.org/review/5c16303c0e0a2641003b77e7"},{"author":"CinemaSerf","author_details":{"name":"CinemaSerf","username":"Geronimo1967","avatar_path":"/yz2HPme8NPLne0mM8tBnZ5ZWJzf.jpg","rating":6.0},"content":"So
+        five, ostensibly unconnected, people are picked off walking along the street
+        by a sniper. Surprisingly, the police manage to apprehend the culprit pretty
+        quickly but are bemused when he asks them to summon \"Jack Reacher\" (Tom
+        Cruise) who, as it happens, was already on his way to the city. The defence
+        attorney \"Helen\" (Rosamund Pike) is trying to elicit some help from \"Reacher\",
+        but this former criminal investigator wants to nail the man''s ass firmly
+        to the slats. When the accused is reduced to a coma after being beaten up
+        on a prison bus, the two start to work in earnest on this seemingly open and
+        shut case and we gradually discover that, well there is a great deal more
+        to discover...! It''s way too long, this, and takes the best part of an hour
+        for us to get past the character establishment and who''s got a grudge bits,
+        also Pike is really quite sterile with her portrayal of the dogged lawyer
+        - but once Cruise gets into his stride the story starts to pick up quite interestingly
+        with plenty of action, a few twists and an ending that reminded me a bit of
+        \"Highlander\" (1986). Eye-candyman Jai Courtney is still as wooden as a door
+        post but does enough here, as do Richard Jenkins and the sparingly, but effectively,
+        used Werner Herzog. Cruise has made loads of these films that showcase his
+        talents in high-end action films and this fits neatly into the middle of the
+        pile. Not bad, but I''ve already forgotten it.","created_at":"2022-08-02 07:01:24
+        UTC","id":"62e8cbc46d9fe800597576b7","updated_at":"2022-08-02 07:01:24 UTC","url":"https://www.themoviedb.org/review/62e8cbc46d9fe800597576b7"},{"author":"Andre
+        Gonzales","author_details":{"name":"Andre Gonzales","username":"SoSmooth1982","avatar_path":"/ast1oGYDI7Li9daLuOV4UxGiXj.jpg","rating":8.0},"content":"Good
+        movie. Just like a normal type of Tom Cruise movie. Where he kicks lots of
+        butte. In this one he''s like a ghost. Trying to be like the bourne identity.
+        Still a decent movie though.","created_at":"2023-07-06 01:49:19 UTC","id":"64a61d9f2b531d0145842168","updated_at":"2023-07-06
+        01:49:20 UTC","url":"https://www.themoviedb.org/review/64a61d9f2b531d0145842168"}],"total_pages":1,"total_results":4}'
+  recorded_at: Fri, 06 Dec 2024 22:03:22 GMT
+recorded_with: VCR 6.3.1
