@@ -20,11 +20,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
           Attendee.create!(viewing_party: viewing_party, user: invitee, is_host: false, name: invitee.name, username: invitee.username)
         end
       end
-
       render json: ViewingPartySerializer.format_viewing_party(viewing_party) 
-      
-    else
-      render json: {error: "Failed to create viewing party", details: viewing_party.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
