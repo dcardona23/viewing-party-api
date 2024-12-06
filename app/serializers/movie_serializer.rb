@@ -40,6 +40,7 @@ class MovieSerializer
           release_year: movie[:release_year],
           vote_average: movie[:vote_average],
           runtime: movie[:runtime],
+          genres: movie[:genres],
           summary: movie[:summary],
           cast: movie[:cast],
           total_reviews: movie[:total_reviews],

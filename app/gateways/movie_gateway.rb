@@ -38,40 +38,66 @@ class MovieGateway
     json1 = JSON.parse(response1.body, symbolize_names: true)
     json2 = JSON.parse(response2.body, symbolize_names: true)
     json3 = JSON.parse(response3.body, symbolize_names: true)
-    
+
     if json1[:success] == false
       raise ActiveRecord::RecordNotFound, "Movie with Id #{id} not found"
     end
 
-    limited_cast = json2[:cast].first(10).map do |cast_member| {
-      character: cast_member[:character],
-      actor: cast_member[:name]
-    }
-    end
+    cast = json2[:cast]
+    limited_cast = get_limited_cast(cast)
 
-    limited_reviews = json3[:results].first(5).map do |review| {
-      author: review[:author],
-      review: review[:content]
-    }
-    end
+    reviews = json3[:results]
+    limited_reviews = get_limited_reviews(reviews)
 
-    release_date_string = json1[:release_date]
-    release_date = Date.parse(release_date_string)
-    release_year = release_date.year
-    
+    release_date = json1[:release_date]
+    release_year = format_release_year(release_date)
+
+    genres = json1[:genres].map { |genre| genre[:name] }
+
+    minutes = json1[:runtime]
+    runtime_final = format_runtime(minutes)
+
     movie_data = {
       id: json1[:id],
       title: json1[:title],
       release_year: release_year,
       vote_average: json1[:vote_average],
-      runtime: json1[:runtime],
+      runtime: runtime_final,
+      genres: genres,
       summary: json1[:overview],
       cast: limited_cast,
       total_reviews: json3[:results].length,
       reviews: limited_reviews
     }
-
     movie_data
+  end
+
+  def self.get_limited_cast(cast)
+    cast.first(10).map do |cast_member| {
+      character: cast_member[:character],
+      actor: cast_member[:name]
+    }
+    end
+  end
+
+  def self.get_limited_reviews(reviews)
+    reviews.first(5).map do |review| {
+      author: review[:author],
+      review: review[:content]
+    }
+    end
+  end
+
+  def self.format_runtime(minutes)
+    hours = minutes/60
+    remaining_minutes = minutes.remainder(60)
+
+    "#{hours} hour#{"s" if hours > 1}, #{remaining_minutes} minute#{"s" if remaining_minutes > 1}"
+  end
+
+  def self.format_release_year(release_date)
+    release_date = Date.parse(release_date)
+    release_date.year
   end
 
   private
