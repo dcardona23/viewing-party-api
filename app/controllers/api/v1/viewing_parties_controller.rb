@@ -6,15 +6,14 @@ rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
   def create
     host = User.find(params[:user_id])
 
-    if host.nil?
-      raise ActiveRecord::RecordInvalid, "Unauthorized" 
-    else
-      viewing_party = ViewingParty.new(viewing_party_params)
-    end
+    viewing_party = ViewingParty.new(viewing_party_params)
 
-    render json: ViewingPartySerializer.format_viewing_party(viewing_party) 
-    attendee = Attendee.create!(viewing_party_id: viewing_party.id, user_id: host.id, is_host: true, name: host.name, username: host.username)
-    binding.pry
+    if viewing_party.save
+      attendee = Attendee.create!(viewing_party: viewing_party, user: host, is_host: true, name: host.name, username: host.username)
+      render json: ViewingPartySerializer.format_viewing_party(viewing_party) 
+    else
+      render json: {error: "Failed to create viewing party", details: viewing_party.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   private
@@ -25,6 +24,10 @@ rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
 
   def record_not_found(exception)
     render json: ErrorSerializer.format_error(exception), status: :not_found
+  end
+
+  def record_invalid(exception)
+    render json: ErrorSerializer.format_error(exception), status: :unprocessable_entity
   end
 
 end
