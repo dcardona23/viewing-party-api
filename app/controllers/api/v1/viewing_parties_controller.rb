@@ -5,12 +5,24 @@ rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
 
   def create
     host = User.find(params[:user_id])
+    invitees = params[:viewing_party].delete(:invitees)
 
-    viewing_party = ViewingParty.new(viewing_party_params)
+    viewing_party_params = params.require(:viewing_party).permit(:name, :start_time, :end_time, :movie_id, :movie_title)
+
+    viewing_party = ViewingParty.create!(viewing_party_params)
 
     if viewing_party.save
-      attendee = Attendee.create!(viewing_party: viewing_party, user: host, is_host: true, name: host.name, username: host.username)
+      Attendee.create!(viewing_party: viewing_party, user: host, is_host: true, name: host.name, username: host.username)
+
+      if invitees
+        invitees.each do |invitee_id|
+          invitee = User.find(invitee_id)
+          Attendee.create!(viewing_party: viewing_party, user: invitee, is_host: false, name: invitee.name, username: invitee.username)
+        end
+      end
+
       render json: ViewingPartySerializer.format_viewing_party(viewing_party) 
+      
     else
       render json: {error: "Failed to create viewing party", details: viewing_party.errors.full_messages }, status: :unprocessable_entity
     end
@@ -18,16 +30,11 @@ rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
 
   private
 
-  def viewing_party_params
-    params.require(:viewing_party).permit(:name, :start_time, :end_time, :movie_id, :movie_title, :host_id, invitees: [])
-  end
-
   def record_not_found(exception)
-    render json: ErrorSerializer.format_error(exception), status: :not_found
+    render json: ErrorSerializer.format_error(exception)
   end
 
   def record_invalid(exception)
-    render json: ErrorSerializer.format_error(exception), status: :unprocessable_entity
+    render json: ErrorSerializer.format_error(exception)
   end
-
 end

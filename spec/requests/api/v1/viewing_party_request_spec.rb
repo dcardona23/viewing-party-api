@@ -4,14 +4,16 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
   describe "happy path" do
     it "can create a viewing party" do
       user = User.create!(name: "Hank Williams", username: "hkw", password: "fwefw")
-
-
+      user2 = User.create!(name: "Baxter", username: "anchorman", password: "punt")
+      user3 = User.create!(name: "Loki", username: "sonofthor", password: "godofmischief")
+      
       viewing_party_params = {
         name: "test",
         start_time: "12",
         end_time: "2",
         movie_id: 4,
-        movie_title: "Inception"
+        movie_title: "Inception",
+        invitees: [user2.id, user3.id]
       }
 
       headers = {"CONTENT_TYPE" => "application/json"}
