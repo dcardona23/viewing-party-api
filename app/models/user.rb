@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :viewing_parties
+  has_many :viewing_parties, through: :attendees
   has_many :attendees
 
   validates :name, presence: true

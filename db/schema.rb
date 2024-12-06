@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_12_05_221036) do
+ActiveRecord::Schema[7.1].define(version: 2024_12_06_160810) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "attendees", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "viewing_party_id", null: false
-    t.boolean "is_host"
+    t.boolean "is_host", default: false
     t.string "name"
     t.string "username"
     t.datetime "created_at", null: false

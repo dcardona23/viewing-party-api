@@ -12,11 +12,11 @@ class ViewingPartySerializer
           end_time: viewing_party.end_time,
           movie_id: viewing_party.movie_id,
           movie_title: viewing_party.movie_title,
-          invitees: viewing_party.attendees.map do |attendee| 
+          invitees: viewing_party.invitees.map do |invitee| 
             {
-              id: attendee.id,
-              name: attendee.name,
-              username: attendee.username
+              id: invitee.id,
+              name: invitee.name,
+              username: invitee.username
             }
           end
           }

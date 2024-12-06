@@ -2,10 +2,11 @@ class Api::V1::ViewingPartiesController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
 
-
+#make is_host default false
   def create
     host = User.find(params[:user_id])
-    invitees = params[:viewing_party].delete(:invitees)
+
+    invitees = params[:invitees]
 
     viewing_party_params = params.require(:viewing_party).permit(:name, :start_time, :end_time, :movie_id, :movie_title)
 

@@ -15,6 +15,7 @@ class Api::V1::MoviesController < ApplicationController
     id = params[:id]
     movie = MovieGateway.get_movie_by_id(id)
     render json: MovieSerializer.format_movie(movie)
+    #could return a PORO when it asks for less data and a serializer when it asks for more
   end
 
   private
