@@ -4,7 +4,6 @@ rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
 
   def create
     host = User.find(params[:user_id])
-
     invitees = params[:invitees]
 
     viewing_party_params = params.require(:viewing_party).permit(:name, :start_time, :end_time, :movie_id, :movie_title)

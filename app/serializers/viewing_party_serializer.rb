@@ -1,5 +1,6 @@
 class ViewingPartySerializer
   include JSONAPI::Serializer
+  attributes :id, :movie_id, :movie_title
 
   def self.format_viewing_party(viewing_party)
     {

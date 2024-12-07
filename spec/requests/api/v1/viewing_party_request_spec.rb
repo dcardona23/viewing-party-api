@@ -8,7 +8,7 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
     
   end
   describe "happy path" do
-    it "can create a viewing party" do
+    it "can create a viewing party", :vcr do
       viewing_party_params = {
         name: "test",
         start_time: "2025-02-01 01:00:00",
@@ -39,7 +39,7 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
   end
 
   describe "sad paths" do
-    it 'will not create a viewing party without required parameters' do
+    it 'will not create a viewing party without required parameters', :vcr do
       viewing_party_params = {
         name: "",
         start_time: "",
@@ -65,7 +65,7 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
       expect(data[:errors][4]).to eq("Movie title can't be blank")
     end
 
-    it 'will not create a viewing party if the end time is before the start time' do
+    it 'will not create a viewing party if the end time is before the start time', :vcr do
       viewing_party_params = {
         name: "test",
         start_time: "2025-02-01 10:00:00",
@@ -86,5 +86,27 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
       expect(data[:errors]).to be_an(Array)
       expect(data[:errors][0]).to eq("Start time must be before end time")
     end
+
+    it "will not add an invitee with an invalid id", :vcr do
+      viewing_party_params = {
+        name: "test",
+        start_time: "2025-02-01 01:00:00",
+        end_time: "2025-02-01 10:00:00",
+        movie_id: 4,
+        movie_title: "Inception",
+        invitees: [55]
+      }  
+    
+      headers = { "CONTENT_TYPE" => "application/json" }
+      post "/api/v1/viewing_parties/#{@user.id}", headers: headers, params: JSON.generate(viewing_party_params)
+
+      expect(response).to have_http_status(:not_found)
+
+      data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(data[:message]).to eq("Your query could not be completed")
+      expect(data[:errors]).to eq("Couldn't find User with 'id'=55")
+    end
+
   end
 end
