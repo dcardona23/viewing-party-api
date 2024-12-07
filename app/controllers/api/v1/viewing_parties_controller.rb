@@ -33,4 +33,5 @@ rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
   def record_invalid(exception)
     render json: { message: "Your query could not be completed", errors: exception.record.errors.full_messages }, status: :unprocessable_entity
   end
+
 end
