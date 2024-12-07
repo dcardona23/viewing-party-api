@@ -21,13 +21,15 @@ class MovieGateway
 
   def self.get_movie_by_id(id)
     response = conn.get("/3/movie/#{id}") 
+
     json = JSON.parse(response.body, symbolize_names: true)
-    
-    if json[:success] == false
-      raise ActiveRecord::RecordNotFound, "Movie with Id #{id} not found"
+
+    if response.status != 200 || json[:success] == false
+      raise MovieNotFoundError, "Movie with Id #{id} not found"
+    else
+      Movie.new(json)
     end
 
-    Movie.new(json)
   end
 
   def self.get_movie_by_id_full(id)
@@ -40,7 +42,7 @@ class MovieGateway
     json3 = JSON.parse(response3.body, symbolize_names: true)
 
     if json1[:success] == false
-      raise ActiveRecord::RecordNotFound, "Movie with Id #{id} not found"
+      raise MovieNotFoundError, "Movie with Id #{id} not found"
     end
 
     cast = json2[:cast]

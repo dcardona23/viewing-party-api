@@ -2,7 +2,6 @@ class Api::V1::ViewingPartiesController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
 
-#make is_host default false
   def create
     host = User.find(params[:user_id])
 
