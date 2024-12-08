@@ -12,4 +12,11 @@ class ErrorSerializer
       status: status_code
     }
   end
+
+  def self.format_not_found(exception)
+    {
+      message: exception.message,
+      status: "404"
+    }
+  end
 end

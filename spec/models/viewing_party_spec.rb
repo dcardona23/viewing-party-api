@@ -49,12 +49,47 @@ RSpec.describe ViewingParty do
           movie_title: "test",
           user_id: @user.id
           )
-# binding.pry
-        expect(viewing_party.save).to be(true)
+
+          expect(viewing_party.save).to be(true)
+      end
+
+      it "adds invitees to a viewing party" do
+        viewing_party = ViewingParty.create!(
+          name: "test", 
+          start_time: "2025-02-01 01:00:00", 
+          end_time: "2025-02-01 04:00:00", 
+          movie_id: 11, 
+          movie_title: "test",
+          user_id: @user.id, 
+          )
+
+        viewing_party.add_invitees([@user2.id, @user3.id])
+        viewing_party.reload
+
+        expect(viewing_party.invitees.count).to eq(2)
+        expect(viewing_party.invitees).to include(@user2, @user3)
+      end
+
+      it "validates movie runtime" do
+        runtime = 120
+
+        viewing_party = ViewingParty.create!(
+          name: "test", 
+          start_time: "2025-02-01 01:00:00", 
+          end_time: "2025-02-01 04:00:00", 
+          movie_id: 11, 
+          movie_title: "test",
+          user_id: @user.id, 
+          )
+
+        viewing_party.validate_runtime(runtime)
+        viewing_party.reload
+
+        expect(viewing_party).to be_valid
       end
     end
 
-    describe "sad path" do
+    describe "sad paths" do
       it "cannot save a viewing party that is missing required attributes" do
         viewing_party = ViewingParty.new(
           name: "test", 

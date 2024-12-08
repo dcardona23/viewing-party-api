@@ -1,7 +1,5 @@
 class Api::V1::ViewingPartiesController < ApplicationController
-rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
-rescue_from ActionController::ParameterMissing, with: :parameter_missing
 
   def create
     host = User.find(params[:user_id])
@@ -28,15 +26,7 @@ rescue_from ActionController::ParameterMissing, with: :parameter_missing
 
   end
 
-  def record_not_found(exception)
-    render json: { message: "Your query could not be completed", errors: exception.message }, status: :not_found
-  end
-
   def record_invalid(exception)
     render json: { message: "Your query could not be completed", errors: exception.record.errors.full_messages }, status: :unprocessable_entity
-  end
-
-  def parameter_missing(exception)
-    render json: ErrorSerializer.format_error(exception), status: :bad_request
   end
 end

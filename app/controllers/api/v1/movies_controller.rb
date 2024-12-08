@@ -23,15 +23,5 @@ class Api::V1::MoviesController < ApplicationController
     end
     rescue MovieNotFoundError => e
       render json: { message: e.message, status: "404" }, status: :not_found
-    end
-
-  private
-
-  def movie_params
-    params.require(:movie).permit(:title, :vote_average, :query, :sort_by_rating)
-  end
-
-  def movie_not_found(exception)
-    render json: { message: "Movie not found", errors: [exception.message] }, status: :not_found
   end
 end

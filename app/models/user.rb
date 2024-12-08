@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   def get_attributes
     viewing_parties_hosted = ViewingParty.where(user_id: self.id)
-    viewing_parties_invited = ViewingParty.joins(:attendees).where(attendees: { user_id: self.id })
+    viewing_parties_invited = ViewingParty.joins(:attendees).where(attendees: { user_id: self.id }).where(attendees: { is_host: false})
 
     user_data = {
       id: self.id,
@@ -43,6 +43,5 @@ class User < ApplicationRecord
       }
     }
     user_data
-    # binding.pry
   end
 end

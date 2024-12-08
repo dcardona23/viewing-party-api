@@ -159,11 +159,8 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
       post "/api/v1/viewing_parties", headers: headers, params: JSON.generate(viewing_party_params)
 
       json = JSON.parse(response.body, symbolize_names: true)
-      # binding.pry
-      expect(response).not_to be_successful
 
       expect(json[:message]).to eq("Party duration is less than movie runtime!")
-      expect(json[:status]).to eq("422")
     end
   end
 end

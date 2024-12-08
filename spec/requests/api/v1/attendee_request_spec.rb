@@ -41,6 +41,9 @@ RSpec.describe "Add Attendee to Viewing Party Endpoint", type: :request do
       expect(json[:data][:attributes][:invitees]).to be_a(Array)
       expect(json[:data][:attributes][:invitees][0]).to have_key(:id)
       expect(json[:data][:attributes][:invitees][0][:id]).to eq(@user3.id)
+
+      viewing_party = ViewingParty.find(@viewing_party.id)
+      expect(viewing_party.invitees).to include(@user3)
     end
   end
 
@@ -59,18 +62,30 @@ RSpec.describe "Add Attendee to Viewing Party Endpoint", type: :request do
       
       headers = { "CONTENT_TYPE" => "application/json" }
       post "/api/v1/viewing_parties/#{viewing_party.id}/attendees", 
-          headers: headers, 
-          params: JSON.generate(attendee_params)  
+      headers: headers, 
+      params: JSON.generate(attendee_params)  
 
-          data = JSON.parse(response.body, symbolize_names: true)
-          expect(response).to have_http_status(:unprocessable_entity)
+      data = JSON.parse(response.body, symbolize_names: true)
+      expect(response).to have_http_status(:unprocessable_entity)
 
-          expect(data[:message]).to eq("User is already an invitee")
-          expect(data[:status]).to eq("422")
+      expect(data[:message]).to eq("User is already an invitee")
+      expect(data[:status]).to eq("422")
     end
 
     it "will return an error if an attendee has an invalid user id" do
-      
+      invalid_user_id = 99999
+      attendee_params = { invitees_user_id: invalid_user_id }
+
+      headers = { "CONTENT_TYPE" => "application/json" }
+      post "/api/v1/viewing_parties/#{@viewing_party.id}/attendees", 
+      headers: headers, 
+      params: JSON.generate(attendee_params)  
+
+      data = JSON.parse(response.body, symbolize_names: true)
+      expect(response).to have_http_status(:not_found)
+
+      expect(data[:message]).to eq("Couldn't find User with 'id'=99999")
+      expect(data[:status]).to eq("404")
     end
   end
 end

@@ -1,4 +1,5 @@
 class Api::V1::AttendeesController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def create
     viewing_party = ViewingParty.find(params[:id])
@@ -15,7 +16,7 @@ class Api::V1::AttendeesController < ApplicationController
 
   private
 
-  def attendee_params
-    params.require(:attendee).permit(:viewing_party_id, :user_id, :is_host, :name, :username)
+  def record_not_found(exception)
+    render json: ErrorSerializer.format_not_found(exception), status: :not_found
   end
 end

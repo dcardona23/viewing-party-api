@@ -46,10 +46,6 @@ class MovieGateway
     json2 = JSON.parse(response2.body, symbolize_names: true)
     json3 = JSON.parse(response3.body, symbolize_names: true)
 
-    if json1[:success] == false
-      raise MovieNotFoundError, "Movie with Id #{id} not found"
-    end
-
     cast = json2[:cast]
     limited_cast = get_limited_cast(cast)
 
