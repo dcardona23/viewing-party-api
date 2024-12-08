@@ -11,8 +11,13 @@ class ViewingParty < ApplicationRecord
     if invitees.present?
       invitees.each do |invitee_id|
         invitee = User.find_by(id: invitee_id)
+
         if invitee
+          if self.attendees.exists?(id: invitee.id)
+            errors.add(:base, "User is already an invitee")
+          else
           Attendee.create!(viewing_party: self, user: invitee, is_host: false, name: invitee.name, username: invitee.username) 
+          end
         else
         Rails.logger.info("Skipping invalid invitee Id: #{invitee_id}")
         end
@@ -40,7 +45,7 @@ class ViewingParty < ApplicationRecord
   def start_time_before_end_time
     if start_time.present? && end_time.present? && start_time >= end_time
       errors.add(:start_time, "must be before end time")
-    elsif start_time.nil? && end_time.nil?
+    elsif start_time.nil? || end_time.nil?
       errors.add(:base, "Both start time and end time must be present")
     end
   end

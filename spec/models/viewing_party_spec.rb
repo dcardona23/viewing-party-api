@@ -43,13 +43,13 @@ RSpec.describe ViewingParty do
       it "can save a valid viewing party", :vcr do 
         viewing_party = ViewingParty.new(
           name: "test", 
-          start_time: "10:00", 
-          end_time: "12:00", 
-          movie_id: 3, 
+          start_time: "2025-02-01 01:00:00", 
+          end_time: "2025-02-01 04:00:00", 
+          movie_id: 11, 
           movie_title: "test",
           user_id: @user.id
           )
-
+# binding.pry
         expect(viewing_party.save).to be(true)
       end
     end
@@ -58,8 +58,8 @@ RSpec.describe ViewingParty do
       it "cannot save a viewing party that is missing required attributes" do
         viewing_party = ViewingParty.new(
           name: "test", 
-          start_time: "10:00", 
-          end_time: "12:00", 
+          start_time: "2025-02-01 01:00:00", 
+          end_time: "2025-02-01 04:00:00", 
           movie_id: 3, 
           movie_title: "test", 
           user_id: @user.id)

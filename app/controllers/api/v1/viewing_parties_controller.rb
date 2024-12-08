@@ -7,7 +7,7 @@ rescue_from ActionController::ParameterMissing, with: :parameter_missing
     host = User.find(params[:user_id])
     invitees = params[:invitees]
 
-    viewing_party = ViewingParty.new(viewing_party_params)
+    viewing_party = ViewingParty.create!(viewing_party_params)
     runtime = MovieGateway.get_movie_runtime(params[:movie_id])
 
     if viewing_party.validate_runtime(runtime)

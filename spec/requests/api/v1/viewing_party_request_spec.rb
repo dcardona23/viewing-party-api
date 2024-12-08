@@ -23,6 +23,7 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
       post "/api/v1/viewing_parties", headers: headers, params: JSON.generate(viewing_party_params)
 
       json = JSON.parse(response.body, symbolize_names: true)
+      # binding.pry
       expect(response).to be_successful
 
       expect(json[:data]).to be_a(Hash)
@@ -102,7 +103,7 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
         name: "test",
         start_time: "2025-02-01 10:00:00",
         end_time: "2025-02-01 01:00:00",
-        movie_id: 4,
+        movie_id: 11,
         movie_title: "Inception",
         invitees: [@user2.id, @user3.id],
         user_id: @user.id
@@ -159,6 +160,7 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
       post "/api/v1/viewing_parties", headers: headers, params: JSON.generate(viewing_party_params)
 
       json = JSON.parse(response.body, symbolize_names: true)
+      # binding.pry
       expect(response).not_to be_successful
 
       expect(json[:message]).to eq("Party duration is less than movie runtime!")
