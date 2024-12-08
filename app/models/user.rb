@@ -43,5 +43,6 @@ class User < ApplicationRecord
       }
     }
     user_data
+    # binding.pry
   end
 end
