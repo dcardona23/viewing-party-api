@@ -1,30 +1,19 @@
 class Api::V1::ViewingPartiesController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
+rescue_from ActionController::ParameterMissing, with: :parameter_missing
 
   def create
-    host = User.find(params[:viewing_party][:user_id])
-    invitees = params[:viewing_party][:invitees]
+    host = User.find(params[:user_id])
+    invitees = params[:invitees]
 
-    viewing_party = ViewingParty.create!(viewing_party_params)
+    runtime = MovieGateway.get_movie_runtime(params[:movie_id])
 
+    viewing_party = ViewingParty.create!(viewing_party_params) 
     Attendee.create!(viewing_party: viewing_party, user: host, is_host: true, name: host.name, username: host.username)
 
-    if invitees
-      invitees.each do |invitee_id|
-        begin
-          invitee = User.find(invitee_id)
-
-          Attendee.create!(viewing_party: viewing_party, user: invitee, is_host: false, name: invitee.name, username: invitee.username) 
-        
-        rescue ActiveRecord::RecordNotFound => e 
-          Rails.logger.info("Skipping invalid invitee Id: #{invitee_id}")
-        end
-      end
-    end
-
+    viewing_party.add_invitees(invitees)
     render json: ViewingPartySerializer.format_viewing_party(viewing_party) 
-
   end
 
   private
@@ -42,4 +31,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
     render json: { message: "Your query could not be completed", errors: exception.record.errors.full_messages }, status: :unprocessable_entity
   end
 
+  def parameter_missing(exception)
+    render json: ErrorSerializer.format_error(exception), status: :bad_request
+  end
 end

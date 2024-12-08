@@ -29,7 +29,12 @@ class MovieGateway
     else
       Movie.new(json)
     end
+  end
 
+  def self.get_movie_runtime(id)
+    response1 = conn.get("/3/movie/#{id}") 
+    json = JSON.parse(response1.body, symbolize_names: true)
+    json[:runtime]
   end
 
   def self.get_movie_by_id_full(id)

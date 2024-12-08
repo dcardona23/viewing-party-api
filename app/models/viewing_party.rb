@@ -7,6 +7,19 @@ class ViewingParty < ApplicationRecord
   before_validation :parse_times
   validate :start_time_before_end_time
 
+  def add_invitees(invitees)
+    if invitees.present?
+      invitees.each do |invitee_id|
+        invitee = User.find_by(id: invitee_id)
+        if invitee
+          Attendee.create!(viewing_party: self, user: invitee, is_host: false, name: invitee.name, username: invitee.username) 
+        else
+        Rails.logger.info("Skipping invalid invitee Id: #{invitee_id}")
+        end
+      end
+    end
+  end
+
   private
 
   def parse_times

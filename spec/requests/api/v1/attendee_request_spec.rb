@@ -69,5 +69,9 @@ RSpec.describe "Add Attendee to Viewing Party Endpoint", type: :request do
           expect(data[:message]).to eq("User is already an invitee")
           expect(data[:status]).to eq("422")
     end
+
+    it "will return an error if an attendee has an invalid user id" do
+      
+    end
   end
 end
