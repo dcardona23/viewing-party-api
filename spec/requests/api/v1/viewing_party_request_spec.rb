@@ -13,16 +13,17 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
         name: "test",
         start_time: "2025-02-01 01:00:00",
         end_time: "2025-02-01 10:00:00",
-        movie_id: 4,
+        movie_id: 11,
         movie_title: "Inception",
-        invitees: [@user2.id, @user3.id]
+        invitees: [@user2.id, @user3.id],
+        user_id: @user.id
       }  
-    
-      headers = {"CONTENT_TYPE" => "application/json"}
-      post "/api/v1/viewing_parties/#{@user.id}", headers: headers, params: JSON.generate(viewing_party: viewing_party_params)
 
-      expect(response).to be_successful
+      headers = {"CONTENT_TYPE" => "application/json"}
+      post "/api/v1/viewing_parties", headers: headers, params: JSON.generate(viewing_party: viewing_party_params)
+
       json = JSON.parse(response.body, symbolize_names: true)
+      expect(response).to be_successful
 
       expect(json[:data]).to be_a(Hash)
       expect(json[:data][:attributes]).to have_key(:name)
@@ -36,6 +37,37 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
       expect(json[:data][:attributes]).to have_key(:movie_title)
       expect(json[:data][:attributes][:movie_title]).to eq(viewing_party_params[:movie_title])
     end
+
+    it "can create a viewing party and skip invalid invitees", :vcr do
+      viewing_party_params = {
+        name: "test",
+        start_time: "2025-02-01 01:00:00",
+        end_time: "2025-02-01 10:00:00",
+        movie_id: 11,
+        movie_title: "Inception",
+        invitees: [@user2.id, @user3.id, 55],
+        user_id: @user.id
+      }  
+
+      headers = {"CONTENT_TYPE" => "application/json"}
+      post "/api/v1/viewing_parties", headers: headers, params: JSON.generate(viewing_party: viewing_party_params)
+
+      json = JSON.parse(response.body, symbolize_names: true)
+      expect(response).to be_successful
+
+      expect(json[:data]).to be_a(Hash)
+      expect(json[:data][:attributes]).to have_key(:name)
+      expect(json[:data][:attributes][:name]).to eq(viewing_party_params[:name])
+      expect(json[:data][:attributes]).to have_key(:start_time)
+      expect(json[:data][:attributes][:start_time]).to include("2025-02-01")
+      expect(json[:data][:attributes]).to have_key(:end_time)
+      expect(json[:data][:attributes][:end_time]).to include("10:00:00")
+      expect(json[:data][:attributes]).to have_key(:movie_id)
+      expect(json[:data][:attributes][:movie_id]).to eq(viewing_party_params[:movie_id])
+      expect(json[:data][:attributes]).to have_key(:movie_title)
+      expect(json[:data][:attributes][:movie_title]).to eq(viewing_party_params[:movie_title])
+    end
+    
   end
 
   describe "sad paths" do
@@ -46,11 +78,12 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
         end_time: "",
         movie_id: nil,
         movie_title: "",
-        invitees: [@user2.id, @user3.id]
+        invitees: [@user2.id, @user3.id],
+        user_id: @user.id
       }
 
       headers = { "CONTENT_TYPE" => "application/json" }
-      post "/api/v1/viewing_parties/#{@user.id}", headers: headers, params: JSON.generate(viewing_party_params)
+      post "/api/v1/viewing_parties", headers: headers, params: JSON.generate(viewing_party: viewing_party_params)
 
       expect(response).to have_http_status(:unprocessable_entity)
 
@@ -72,11 +105,12 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
         end_time: "2025-02-01 01:00:00",
         movie_id: 4,
         movie_title: "Inception",
-        invitees: [@user2.id, @user3.id]
+        invitees: [@user2.id, @user3.id],
+        user_id: @user.id
       }  
     
       headers = { "CONTENT_TYPE" => "application/json" }
-      post "/api/v1/viewing_parties/#{@user.id}", headers: headers, params: JSON.generate(viewing_party_params)
+      post "/api/v1/viewing_parties", headers: headers, params: JSON.generate(viewing_party_params)
 
       expect(response).to have_http_status(:unprocessable_entity)
 
@@ -94,19 +128,21 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
         end_time: "2025-02-01 10:00:00",
         movie_id: 4,
         movie_title: "Inception",
-        invitees: [55]
+        invitees: [@user2.id, @user3.id, 55],
+        user_id: @user.id
       }  
     
       headers = { "CONTENT_TYPE" => "application/json" }
-      post "/api/v1/viewing_parties/#{@user.id}", headers: headers, params: JSON.generate(viewing_party_params)
+      post "/api/v1/viewing_parties", headers: headers, params: JSON.generate(viewing_party: viewing_party_params)
 
-      expect(response).to have_http_status(:not_found)
-
-      data = JSON.parse(response.body, symbolize_names: true)
-
-      expect(data[:message]).to eq("Your query could not be completed")
-      expect(data[:errors]).to eq("Couldn't find User with 'id'=55")
+      json = JSON.parse(response.body, symbolize_names: true)
+      expect(response).to be_successful
+      expect(json[:data]).to be_a(Hash)
+      expect(json[:data][:attributes]).to have_key(:invitees)
+      expect(json[:data][:attributes][:invitees]).to be_an(Array)
+      expect(json[:data][:attributes][:invitees][0][:name]).to eq("Hank Williams")
+      expect(json[:data][:attributes][:invitees][1][:name]).to eq("Baxter")
+      expect(json[:data][:attributes][:invitees][2][:name]).to eq("Loki")
     end
-
   end
 end

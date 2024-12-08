@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       resources :sessions, only: :create
       resources :movies, only: [:index, :show]
 
-      post "viewing_parties/:user_id", to: "viewing_parties#create"
+      post "viewing_parties", to: "viewing_parties#create"
       post "viewing_parties/:id/attendees", to: "attendees#create"
     end
   end
