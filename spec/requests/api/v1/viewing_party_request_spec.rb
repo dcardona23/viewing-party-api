@@ -23,9 +23,8 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
       post "/api/v1/viewing_parties", headers: headers, params: JSON.generate(viewing_party_params)
 
       json = JSON.parse(response.body, symbolize_names: true)
-      # binding.pry
       expect(response).to be_successful
-
+# binding.pry
       expect(json[:data]).to be_a(Hash)
       expect(json[:data][:attributes]).to have_key(:name)
       expect(json[:data][:attributes][:name]).to eq(viewing_party_params[:name])

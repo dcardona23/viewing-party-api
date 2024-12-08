@@ -17,6 +17,7 @@ RSpec.describe "Users API", type: :request do
 
         expect(response).to have_http_status(:created)
         json = JSON.parse(response.body, symbolize_names: true)
+
         expect(json[:data][:type]).to eq("user")
         expect(json[:data][:id]).to eq(User.last.id.to_s)
         expect(json[:data][:attributes][:name]).to eq(user_params[:name])
@@ -87,4 +88,62 @@ RSpec.describe "Users API", type: :request do
       expect(json[:data][0][:attributes]).to_not have_key(:api_key)
     end
   end
+
+  describe "Retrieve User Profile Endpoint" do
+    it "retrieves a users profile" do
+      @user = User.create!(name: "Hank Williams", username: "hkw", password: "fwefw")
+      @user2 = User.create!(name: "Baxter", username: "anchorman", password: "punt")
+      @user3 = User.create!(name: "Loki", username: "sonofthor", password: "godofmischief")
+
+      @viewing_party = ViewingParty.create!(
+        name: "test", 
+        start_time: "2025-02-01 01:00:00", 
+        end_time: "2025-02-01 10:00:00", 
+        movie_id: 11, 
+        movie_title: "Inception", 
+        user_id: @user.id, 
+        invitees: [@user2, @user3]
+        )
+
+      @viewing_party2 = ViewingParty.create!(
+        name: "test2", 
+        start_time: "2025-02-01 01:00:00", 
+        end_time: "2025-02-01 10:00:00", 
+        movie_id: 11, 
+        movie_title: "The Matrix", 
+        user_id: @user.id, 
+        invitees: [@user3]
+        )
+
+        @viewing_party2 = ViewingParty.create!(
+        name: "test2", 
+        start_time: "2025-02-01 01:00:00", 
+        end_time: "2025-02-01 10:00:00", 
+        movie_id: 11, 
+        movie_title: "The Matrix", 
+        user_id: @user2.id, 
+        invitees: [@user, @user3]
+        )
+
+        get "/api/v1/users/#{@user.id}"
+
+      expect(response).to be_successful
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(json[:data][:id]).to eq(@user.id)
+      expect(json[:data][:type]).to eq("user")
+      expect(json[:data][:attributes]).to have_key(:name)
+      expect(json[:data][:attributes][:name]).to eq("Hank Williams")
+      expect(json[:data][:attributes]).to have_key(:username)
+      expect(json[:data][:attributes][:username]).to eq("hkw")
+      expect(json[:data][:attributes]).to have_key(:viewing_parties_hosted)
+      expect(json[:data][:attributes][:viewing_parties_hosted]).to be_an(Array)
+      expect(json[:data][:attributes][:viewing_parties_hosted][0][:host_id]).to eq(@user.id)
+      expect(json[:data][:attributes][:viewing_parties_hosted][1][:host_id]).to eq(@user.id)
+      expect(json[:data][:attributes]).to have_key(:viewing_parties_invited)
+      expect(json[:data][:attributes][:viewing_parties_invited]).to be_an(Array)
+      expect(json[:data][:attributes][:viewing_parties_invited][0][:host_id]).to eq(@user2.id)
+    end
+  end
+
 end
