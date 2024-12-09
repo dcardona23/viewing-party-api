@@ -1,0 +1,142 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?page=1&query=Anchorman
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_API_KEY>
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 09 Dec 2024 20:59:13 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=9052
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 1f382b82672ab629ac572a5f44f68f00
+      X-Memc-Age:
+      - '14384'
+      X-Memc-Expires:
+      - '9052'
+      Etag:
+      - W/"8172444903958680427732e71943a798"
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 5d351175d5947d478733fbecdab866f6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - pGqXXDVRCGNCipCXKxOdI_nPRD6YnUzdkP9rM9xghNt0_cGrXJFDYA==
+      Age:
+      - '188'
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/5iHPV6M6aPKxXv3w8LTxsD6Zeot.jpg","genre_ids":[35],"id":8699,"original_language":"en","original_title":"Anchorman:
+        The Legend of Ron Burgundy","overview":"It''s the 1970s and San Diego anchorman
+        Ron Burgundy is the top dog in local TV, but that''s all about to change when
+        ambitious reporter Veronica Corningstone arrives as a new employee at his
+        station.","popularity":41.538,"poster_path":"/mAQoC7GNSq98WO3nZd7JprAZCDM.jpg","release_date":"2004-06-28","title":"Anchorman:
+        The Legend of Ron Burgundy","video":false,"vote_average":6.708,"vote_count":4149},{"adult":false,"backdrop_path":"/hYY7wC3vuwSmoRdcMalVMjPC0a0.jpg","genre_ids":[35],"id":109443,"original_language":"en","original_title":"Anchorman
+        2: The Legend Continues","overview":"With the 70s behind him, San Diego''s
+        top rated newsman, Ron Burgundy, returns to take New York''s first 24-hour
+        news channel by storm.","popularity":35.223,"poster_path":"/BAdmxMdCqzjs6hx3KuEtnoWP8d.jpg","release_date":"2013-12-18","title":"Anchorman
+        2: The Legend Continues","video":false,"vote_average":6.14,"vote_count":2553},{"adult":false,"backdrop_path":"/cu2OOUMwJMa6BnfGQ0F5gVTrWxB.jpg","genre_ids":[35],"id":9965,"original_language":"en","original_title":"Wake
+        Up, Ron Burgundy: The Lost Movie","overview":"While Ron Burgundy''s rivalry
+        with Veronica Corningstone escalates quickly, a group of unprofessional thieves
+        better known as ''The Alarm Clock'' try to make the truth known, whatever
+        that may mean...","popularity":9.912,"poster_path":"/gZdIO9Wq31TfrD7YKxhCrNO6cfm.jpg","release_date":"2004-12-28","title":"Wake
+        Up, Ron Burgundy: The Lost Movie","video":false,"vote_average":5.9,"vote_count":177}],"total_pages":1,"total_results":3}'
+  recorded_at: Mon, 09 Dec 2024 21:02:21 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?page=1&query=Anchorman:%20The%20Legend%20of%20Ron%20Burgundy
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_API_KEY>
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 09 Dec 2024 21:07:18 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=18132
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - f4732d2025c15ec1e6524200fd449f25
+      X-Memc-Age:
+      - '6422'
+      X-Memc-Expires:
+      - '18132'
+      Etag:
+      - W/"1159228103b78189de670fe711d86a87"
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 44e92eddc431cc09e1e2c5b24edc90f8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - YmJJwNVm3kN-VFQo1_hefOLi7AKNrAESk68Vx5ONchcYmorJF6xH-g==
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/5iHPV6M6aPKxXv3w8LTxsD6Zeot.jpg","genre_ids":[35],"id":8699,"original_language":"en","original_title":"Anchorman:
+        The Legend of Ron Burgundy","overview":"It''s the 1970s and San Diego anchorman
+        Ron Burgundy is the top dog in local TV, but that''s all about to change when
+        ambitious reporter Veronica Corningstone arrives as a new employee at his
+        station.","popularity":41.538,"poster_path":"/mAQoC7GNSq98WO3nZd7JprAZCDM.jpg","release_date":"2004-06-28","title":"Anchorman:
+        The Legend of Ron Burgundy","video":false,"vote_average":6.708,"vote_count":4149}],"total_pages":1,"total_results":1}'
+  recorded_at: Mon, 09 Dec 2024 21:07:18 GMT
+recorded_with: VCR 6.3.1

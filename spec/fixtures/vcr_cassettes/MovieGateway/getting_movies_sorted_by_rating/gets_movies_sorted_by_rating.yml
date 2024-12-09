@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/discover/movie?page=1&sort_by=vote_average.desc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_API_KEY>
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 09 Dec 2024 21:08:55 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=20891
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 92328b8dbe613c069d6d8c7543fca78c
+      X-Memc-Age:
+      - '7057'
+      X-Memc-Expires:
+      - '20891'
+      Etag:
+      - W/"4dc750da14dd1890bedb4fb2cac38a04"
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 cf7db6af8b8a86ebeb9fc938221e81da.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - SDyrh2EFGAjBVDEOlQwHPeKoMQhot8wePyw96HKf6T3OCBCFtRlvhw==
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":null,"genre_ids":[18],"id":1399680,"original_language":"en","original_title":"Tea
+        & Biscuit Crumbs","overview":"Dorothy is an elderly woman who struggles with
+        loneliness and is suffering the loss of her late partner. Strange and inexplainable
+        happenings begin to follow her around the house, causing her unease. That
+        is until she uncovers the cause and resists her family’s contempt, unveiling
+        a curious and heartwarming relationship.","popularity":0.0,"poster_path":"/d4nBVzLDFnvuQ3g68MPF4t4QtgV.jpg","release_date":"2024-12-03","title":"Tea
+        & Biscuit Crumbs","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/m0PAmGXo8QVftALE1hzQYgPRPzA.jpg","genre_ids":[10402],"id":1399572,"original_language":"ja","original_title":"マクロスFとΔ合わせ
+        京都南座歌舞伎ノ宴(両日とも夜の部がメイン)<1月13日(土)夜の部>","overview":"","popularity":0.0,"poster_path":"/g7MnvWFfAJ8ROM6uu0xhWPwCImz.jpg","release_date":"2024-06-05","title":"マクロスFとΔ合わせ
+        京都南座歌舞伎ノ宴(両日とも夜の部がメイン)<1月13日(土)夜の部>","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":1399563,"original_language":"en","original_title":"Damp","overview":"A
+        self-taught insensitive cretin wanders a ruggish hellscape seeking whom of
+        which he may devour, isolation ensues.","popularity":0.0,"poster_path":"/lwEHrcGBM0NLZuQWAhXMKgE96Wb.jpg","release_date":"","title":"Damp","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/mM3YzdeN0WpD0WkuwrDyxVcrv1x.jpg","genre_ids":[10402],"id":1399554,"original_language":"ja","original_title":"AIR
+        WALKURE PREMIUM LIVE 2020","overview":"","popularity":0.0,"poster_path":"/Y4nOutaJVjus3KqBhY0dBbPPjp.jpg","release_date":"2020-06-14","title":"AIR
+        WALKURE PREMIUM LIVE 2020","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/weBllBzX5hmyC8CfseoufNxPyFn.jpg","genre_ids":[99],"id":1399548,"original_language":"es","original_title":"Echando
+        Raíces","overview":"","popularity":0.0,"poster_path":"/h3TMmY3DipFyG7jLk4Lc89kc6yh.jpg","release_date":"2024-12-05","title":"Echando
+        Raíces","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/ba1pxn9m4mRflra8h2c2XKo4oXb.jpg","genre_ids":[10402],"id":1399539,"original_language":"ja","original_title":"マクロスΔ
+        LIVE2018“ワルキューレは裏切らない“at 横浜アリーナ＜Day-2","overview":"","popularity":0.0,"poster_path":"/5voTPX1PGtuYgwYbuYwEogPYggA.jpg","release_date":"2018-02-25","title":"マクロスΔ
+        LIVE2018“ワルキューレは裏切らない“at 横浜アリーナ＜Day-2","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[18],"id":1399536,"original_language":"id","original_title":"Berhenti
+        Berjalan","overview":"","popularity":0.0,"poster_path":null,"release_date":"","title":"Berhenti
+        Berjalan","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/zBUzr4786qQ35GFP23vvEF5fVfQ.jpg","genre_ids":[10402],"id":1399530,"original_language":"ja","original_title":"マクロスΔ
+        LIVE2018“ワルキューレは裏切らない“at 横浜アリーナ＜Day-1","overview":"","popularity":0.0,"poster_path":"/5voTPX1PGtuYgwYbuYwEogPYggA.jpg","release_date":"2018-02-24","title":"マクロスΔ
+        LIVE2018“ワルキューレは裏切らない“at 横浜アリーナ＜Day-1","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[35,28,12,10749,18,14],"id":1399487,"original_language":"en","original_title":"Meet
+        Arnold: The Movie","overview":"Meet Arnold: The Movie is a 2022 live-action
+        comedy","popularity":0.6,"poster_path":null,"release_date":"2022-11-18","title":"Meet
+        Arnold: The Movie","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[18],"id":1399482,"original_language":"en","original_title":"The
+        Fifth Wheel","overview":"5 friends set off on a camping trip and experience
+        loss, hardships, and forgiveness.","popularity":0.6,"poster_path":null,"release_date":"","title":"The
+        Fifth Wheel","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[10402],"id":1399456,"original_language":"fr","original_title":"Dissonance","overview":"","popularity":0.6,"poster_path":"/tNeGbLO3ew2ktgFZlKEsiPz2zFS.jpg","release_date":"2024-05-05","title":"Dissonance","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/ak9stdZXysvcdSjvazC7NohwVQA.jpg","genre_ids":[27],"id":1399426,"original_language":"pt","original_title":"Um
+        Drink Para Imortalidade","overview":"","popularity":1.4,"poster_path":"/aHF3JwQU05EJ0ab385Z7awfzl4O.jpg","release_date":"2024-10-22","title":"Um
+        Drink Para Imortalidade","video":false,"vote_average":10.0,"vote_count":2},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":1399397,"original_language":"en","original_title":"Darina","overview":"In
+        1940, a young, aspiring theologian, Darina, attends a college admission interview
+        for religious studies. She has to convince three professors that she deserves
+        to be at the University, even though no other women were admitted before.
+        A short film based on the real life of the first female Lutheran pastor in
+        Slovakia who infiltrated into the man''s world of the Church, Darina Bancikova.","popularity":1.4,"poster_path":"/5GTalvQrmTgzBqHQAQvgYvf6jyf.jpg","release_date":"","title":"Darina","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/sZFstcxRhC6BG1Jvh44MWJmjZ79.jpg","genre_ids":[18],"id":1399396,"original_language":"it","original_title":"Facciamola
+        Finita","overview":"","popularity":0.6,"poster_path":"/s0HK1BQrIltVqIWfrmhENG4TaHy.jpg","release_date":"2008-10-02","title":"Facciamola
+        Finita","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/ng0ozltHlu5LzoQjL1j9SSAq5J.jpg","genre_ids":[53],"id":1399392,"original_language":"en","original_title":"Sticky
+        Notes","overview":"An anxious student follows a mysterious trail of sticky
+        notes, uncovering something shocking","popularity":0.6,"poster_path":"/8S3q9j5gfGO2LitvGpC5UQiiyl6.jpg","release_date":"2024-12-07","title":"Sticky
+        Notes","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/4EIvratfoSFLDrlR7Tdyk7mSK5W.jpg","genre_ids":[10770,10402],"id":1399374,"original_language":"en","original_title":"Soundgarden:
+        Black Hole Sun","overview":"Soundgarden performs in the music video \"Black
+        Hole Sun\" from the album \"Superunknown\" recorded for A&M Records. The video
+        begins with shots of the sun. The band plays in a field under a bright blue
+        sky with blowing clouds that eventually turns dark. People in a grim, surreal
+        suburbia watch the sun as computer effects warp their eyes and mouths, all
+        before it turns into the black hole and sucks everything up.","popularity":0.68,"poster_path":"/7pHnyQYpzcGQTVg2er5lVgXWm4g.jpg","release_date":"1994-06-17","title":"Soundgarden:
+        Black Hole Sun","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/wD9pxuTQIBvifJ2qegUrPZHatTS.jpg","genre_ids":[53,18,9648],"id":1399313,"original_language":"fr","original_title":"02:59","overview":"","popularity":0.6,"poster_path":"/9wQR3Tswb6qD9ARLqmRsesayNaa.jpg","release_date":"2024-02-23","title":"02:59","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/4tujpd8rqUALyw3Sr3VZtotqpcl.jpg","genre_ids":[14,12],"id":1399188,"original_language":"en","original_title":"The
+        Trade","overview":"Farnick has been sent to execute a traitor of the cult-like
+        organisation, \"The Trade\". However while in pursuit of this double-crosser,
+        the hint of a larger truth becomes apparent and Farnick is left in the dark.","popularity":0.871,"poster_path":"/87D1sVEpvkA2pUUOfwYQa9YZos2.jpg","release_date":"2024-08-27","title":"The
+        Trade","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/rdNlLod0DoC2KuCFgScpQZV2Ed0.jpg","genre_ids":[35,99],"id":1399146,"original_language":"en","original_title":"our
+        last year at sleepaway camp","overview":"The days in the lives of several
+        young women and men on their last days of sleepaway camp in Brattleboro, Vermont","popularity":0.623,"poster_path":"/dc3UXhXxkO6Zz3VAnIWxwjyTxnz.jpg","release_date":"2024-08-28","title":"our
+        last year at sleepaway camp","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[27],"id":1399139,"original_language":"pt","original_title":"Blood
+        Delivery","overview":"","popularity":1.4,"poster_path":null,"release_date":"2024-08-01","title":"Blood
+        Delivery","video":false,"vote_average":10.0,"vote_count":1}],"total_pages":47560,"total_results":951184}'
+  recorded_at: Mon, 09 Dec 2024 21:08:55 GMT
+recorded_with: VCR 6.3.1
