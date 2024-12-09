@@ -90,7 +90,7 @@ RSpec.describe "Users API", type: :request do
   end
 
   describe "Retrieve User Profile Endpoint" do
-    it "retrieves a users profile" do
+    before(:each) do
       @user = User.create!(name: "Hank Williams", username: "hkw", password: "fwefw")
       @user2 = User.create!(name: "Baxter", username: "anchorman", password: "punt")
       @user3 = User.create!(name: "Loki", username: "sonofthor", password: "godofmischief")
@@ -124,26 +124,42 @@ RSpec.describe "Users API", type: :request do
         user_id: @user2.id, 
         invitees: [@user, @user3]
         )
+    end
 
+    describe "happy paths" do
+      it "retrieves a users profile" do
         get "/api/v1/users/#{@user.id}"
 
-      expect(response).to be_successful
-      json = JSON.parse(response.body, symbolize_names: true)
+        expect(response).to be_successful
+        json = JSON.parse(response.body, symbolize_names: true)
 
-      expect(json[:data][:id]).to eq(@user.id)
-      expect(json[:data][:type]).to eq("user")
-      expect(json[:data][:attributes]).to have_key(:name)
-      expect(json[:data][:attributes][:name]).to eq("Hank Williams")
-      expect(json[:data][:attributes]).to have_key(:username)
-      expect(json[:data][:attributes][:username]).to eq("hkw")
-      expect(json[:data][:attributes]).to have_key(:viewing_parties_hosted)
-      expect(json[:data][:attributes][:viewing_parties_hosted]).to be_an(Array)
-      expect(json[:data][:attributes][:viewing_parties_hosted][0][:host_id]).to eq(@user.id)
-      expect(json[:data][:attributes][:viewing_parties_hosted][1][:host_id]).to eq(@user.id)
-      expect(json[:data][:attributes]).to have_key(:viewing_parties_invited)
-      expect(json[:data][:attributes][:viewing_parties_invited]).to be_an(Array)
-      expect(json[:data][:attributes][:viewing_parties_invited][0][:host_id]).to eq(@user2.id)
+        expect(json[:data][:id]).to eq(@user.id)
+        expect(json[:data][:type]).to eq("user")
+        expect(json[:data][:attributes]).to have_key(:name)
+        expect(json[:data][:attributes][:name]).to eq("Hank Williams")
+        expect(json[:data][:attributes]).to have_key(:username)
+        expect(json[:data][:attributes][:username]).to eq("hkw")
+        expect(json[:data][:attributes]).to have_key(:viewing_parties_hosted)
+        expect(json[:data][:attributes][:viewing_parties_hosted]).to be_an(Array)
+        expect(json[:data][:attributes][:viewing_parties_hosted][0][:host_id]).to eq(@user.id)
+        expect(json[:data][:attributes][:viewing_parties_hosted][1][:host_id]).to eq(@user.id)
+        expect(json[:data][:attributes]).to have_key(:viewing_parties_invited)
+        expect(json[:data][:attributes][:viewing_parties_invited]).to be_an(Array)
+        expect(json[:data][:attributes][:viewing_parties_invited][0][:host_id]).to eq(@user2.id)
+      end
+    end
+
+    describe "sad paths" do
+      it "returns an error if asked to retrieve a profile for an invalid user" do
+        get "/api/v1/users/9999"
+
+        json = JSON.parse(response.body, symbolize_names: true)
+        expect(response).not_to be_successful
+
+        expect(response).to have_http_status(:not_found)
+        expect(json[:message]).to eq("Couldn't find User with 'id'=9999")
+        expect(json[:status]).to eq("404")
+      end
     end
   end
-
 end

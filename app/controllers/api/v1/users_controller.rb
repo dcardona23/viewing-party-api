@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   def create
     user = User.new(user_params)
     if user.save
@@ -22,5 +23,9 @@ class Api::V1::UsersController < ApplicationController
 
   def user_params
     params.permit(:name, :username, :password, :password_confirmation)
+  end
+
+  def record_not_found(exception)
+    render json: ErrorSerializer.format_not_found(exception), status: :not_found
   end
 end
