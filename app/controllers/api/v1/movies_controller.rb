@@ -4,10 +4,11 @@ class Api::V1::MoviesController < ApplicationController
   rescue_from MovieNotFoundError, with: :movie_not_found
 
   def index
+    movies = 
       if params[:query].present?
-        movies = MovieGateway.get_movies_by_search_param(params[:query])
+        MovieGateway.get_movies_by_search_param(params[:query])
       else params[:sort_by_rating].present?
-        movies = MovieGateway.get_movies_sorted_by_rating
+        MovieGateway.get_movies_sorted_by_rating
       end
 
     render json: MovieSerializer.format_movies(movies)
@@ -21,7 +22,11 @@ class Api::V1::MoviesController < ApplicationController
       movie = MovieGateway.get_movie_by_id(params[:id])
       render json: MovieSerializer.format_movie(movie)
     end
-    rescue MovieNotFoundError => e
-      render json: { message: e.message, status: "404" }, status: :not_found
+  end
+
+  private
+
+  def movie_not_found(exception)
+    render json: { message: exception.message, status: "404" }, status: :not_found
   end
 end
