@@ -87,5 +87,21 @@ RSpec.describe "Add Attendee to Viewing Party Endpoint", type: :request do
       expect(data[:message]).to eq("Couldn't find User with 'id'=99999")
       expect(data[:status]).to eq("404")
     end
+
+    it "will return an error if an attendee is added to an invalid viewing party" do
+      invalid_party_id = 99999
+      attendee_params = { invitees_user_id: @user.id }
+
+      headers = { "CONTENT_TYPE" => "application/json" }
+      post "/api/v1/viewing_parties/#{invalid_party_id}/attendees", 
+      headers: headers, 
+      params: JSON.generate(attendee_params)  
+
+      data = JSON.parse(response.body, symbolize_names: true)
+      expect(response).to have_http_status(:not_found)
+
+      expect(data[:message]).to eq("Couldn't find ViewingParty with 'id'=99999")
+      expect(data[:status]).to eq("404")
+    end
   end
 end
