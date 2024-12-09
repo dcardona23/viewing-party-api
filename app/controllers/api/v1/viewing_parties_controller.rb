@@ -3,18 +3,13 @@ rescue_from StandardError, with: :handle_runtime_error
 
   def create
     host = User.find(params[:user_id])
-    invitees = params[:invitees]
-
     viewing_party = ViewingParty.create!(viewing_party_params)
-    runtime = MovieGateway.get_movie_runtime(params[:movie_id])
 
-    unless validate_runtime(viewing_party, runtime)
-      raise StandardError, "Party duration is less than movie runtime!"
-    end
-
+    validate_runtime(viewing_party, MovieGateway.get_movie_runtime(params[:movie_id]))
+    
     Attendee.create!(viewing_party: viewing_party, user: host, is_host: true, name: host.name, username: host.username)
 
-    viewing_party.add_invitees(invitees)
+    viewing_party.add_invitees(params[:invitees])
 
     render json: ViewingPartySerializer.format_viewing_party(viewing_party) 
   end
@@ -29,10 +24,9 @@ rescue_from StandardError, with: :handle_runtime_error
     start_time = DateTime.parse(viewing_party.start_time) 
     end_time = DateTime.parse(viewing_party.end_time) 
 
-    party_duration_in_seconds = (end_time - start_time) * 24 * 60 * 60
-    party_duration_in_minutes = (party_duration_in_seconds / 60).to_i
+    party_duration_in_minutes = ((end_time - start_time) * 24 * 60 * 60 / 60).to_i
 
-    party_duration_in_minutes >= runtime
+    raise StandardError, "Party duration is less than movie runtime!" if party_duration_in_minutes < runtime
   end
 
   def handle_runtime_error(exception)
