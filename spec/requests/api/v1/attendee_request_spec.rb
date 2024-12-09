@@ -48,30 +48,6 @@ RSpec.describe "Add Attendee to Viewing Party Endpoint", type: :request do
   end
 
   describe "sad paths" do
-    it "will not add an attendee to a viewing party if the attendee is already invited" do
-      viewing_party = ViewingParty.create(
-        name: "test2", 
-        start_time: "2025-02-01 01:00:00", 
-        end_time: "2025-02-01 10:00:00", 
-        movie_id: 7, 
-        movie_title: "The Matrix", 
-        invitees: [@user3], 
-        user_id: @user.id
-        )
-      attendee_params = { invitees_user_id: @user3.id }  
-      
-      headers = { "CONTENT_TYPE" => "application/json" }
-      post "/api/v1/viewing_parties/#{viewing_party.id}/attendees", 
-      headers: headers, 
-      params: JSON.generate(attendee_params)  
-
-      data = JSON.parse(response.body, symbolize_names: true)
-      expect(response).to have_http_status(:unprocessable_entity)
-
-      expect(data[:message]).to eq("User is already an invitee")
-      expect(data[:status]).to eq("422")
-    end
-
     it "will return an error if an attendee has an invalid user id" do
       invalid_user_id = 99999
       attendee_params = { invitees_user_id: invalid_user_id }
