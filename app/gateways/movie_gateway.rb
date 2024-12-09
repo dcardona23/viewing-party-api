@@ -54,12 +54,6 @@ class MovieGateway
     movie_data[:runtime]
   end
 
-  def self.get_movie_runtime(movie_id)
-    movie_data = fetch_movie_data(movie_id)
-    minutes = movie_data[:runtime]
-    format_runtime(minutes) 
-  end
-
   private
 
   def self.conn
@@ -106,6 +100,12 @@ class MovieGateway
 
   def self.get_movie_genres(id)
     fetch_movie_data(id)[:genres].map { |genre| genre[:name] }
+  end
+
+  def self.get_movie_runtime(movie_id)
+    movie_data = fetch_movie_data(movie_id)
+    minutes = movie_data[:runtime]
+    format_runtime(minutes) 
   end
 
   def self.format_runtime(minutes)
