@@ -39,7 +39,7 @@ RSpec.describe MovieGateway do
 
   describe "getting a movie runtime" do
     it "gets a movies runtime by its id", :vcr do
-      runtime = MovieGateway.get_movie_runtime(11)
+      runtime = MovieGateway.get_movie_runtime_raw(11)
 
       expect(runtime).to be_an(Integer)
       expect(runtime).to eq(121)

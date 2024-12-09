@@ -697,4 +697,444 @@ http_interactions:
         08:09:43 UTC\",\"id\":\"647c46c7e323f30148170b1b\",\"updated_at\":\"2023-06-04
         08:09:43 UTC\",\"url\":\"https://www.themoviedb.org/review/647c46c7e323f30148170b1b\"}],\"total_pages\":1,\"total_results\":6}"
   recorded_at: Mon, 09 Dec 2024 21:13:46 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/11
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_API_KEY>
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 09 Dec 2024 20:27:21 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=25103
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 5dfd93b8685f3044b4e3a03ef882eddf
+      X-Memc-Age:
+      - '1691'
+      X-Memc-Expires:
+      - '25103'
+      Etag:
+      - W/"aff968fc49f60f0ff11497376f7f2790"
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 3dc4c80cd959e984309833cac8f5a630.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - xEy1jjOcE645OsDjKUBq6HyiA1z9RP5nYzolRFmAHE_I_Q2g0y2-uw==
+      Age:
+      - '7937'
+    body:
+      encoding: UTF-8
+      string: '{"adult":false,"backdrop_path":"/zqkmTXzjkAgXmEWLRsY4UpTWCeo.jpg","belongs_to_collection":{"id":10,"name":"Star
+        Wars Collection","poster_path":"/r8Ph5MYXL04Qzu4QBbq2KjqwtkQ.jpg","backdrop_path":"/zZDkgOmFMVYpGAkR9Tkxw0CRnxX.jpg"},"budget":11000000,"genres":[{"id":12,"name":"Adventure"},{"id":28,"name":"Action"},{"id":878,"name":"Science
+        Fiction"}],"homepage":"http://www.starwars.com/films/star-wars-episode-iv-a-new-hope","id":11,"imdb_id":"tt0076759","origin_country":["US"],"original_language":"en","original_title":"Star
+        Wars","overview":"Princess Leia is captured and held hostage by the evil Imperial
+        forces in their effort to take over the galactic Empire. Venturesome Luke
+        Skywalker and dashing captain Han Solo team together with the loveable robot
+        duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and
+        justice in the Empire.","popularity":98.77,"poster_path":"/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg","production_companies":[{"id":1,"logo_path":"/tlVSws0RvvtPBwViUyOFAO0vcQS.png","name":"Lucasfilm
+        Ltd.","origin_country":"US"},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
+        Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
+        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.203,"vote_count":20624}'
+  recorded_at: Mon, 09 Dec 2024 22:39:38 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/11
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_API_KEY>
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 09 Dec 2024 20:27:21 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=25103
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 5dfd93b8685f3044b4e3a03ef882eddf
+      X-Memc-Age:
+      - '1691'
+      X-Memc-Expires:
+      - '25103'
+      Etag:
+      - W/"aff968fc49f60f0ff11497376f7f2790"
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 786e78cb5cbe5eadde8b1e6951bf8a60.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - RYImzdwdky6UzmoAWeJyqTq7p38KhazIP4SMgZhXdVl0L4mYnJJcOQ==
+      Age:
+      - '7937'
+    body:
+      encoding: UTF-8
+      string: '{"adult":false,"backdrop_path":"/zqkmTXzjkAgXmEWLRsY4UpTWCeo.jpg","belongs_to_collection":{"id":10,"name":"Star
+        Wars Collection","poster_path":"/r8Ph5MYXL04Qzu4QBbq2KjqwtkQ.jpg","backdrop_path":"/zZDkgOmFMVYpGAkR9Tkxw0CRnxX.jpg"},"budget":11000000,"genres":[{"id":12,"name":"Adventure"},{"id":28,"name":"Action"},{"id":878,"name":"Science
+        Fiction"}],"homepage":"http://www.starwars.com/films/star-wars-episode-iv-a-new-hope","id":11,"imdb_id":"tt0076759","origin_country":["US"],"original_language":"en","original_title":"Star
+        Wars","overview":"Princess Leia is captured and held hostage by the evil Imperial
+        forces in their effort to take over the galactic Empire. Venturesome Luke
+        Skywalker and dashing captain Han Solo team together with the loveable robot
+        duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and
+        justice in the Empire.","popularity":98.77,"poster_path":"/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg","production_companies":[{"id":1,"logo_path":"/tlVSws0RvvtPBwViUyOFAO0vcQS.png","name":"Lucasfilm
+        Ltd.","origin_country":"US"},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
+        Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
+        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.203,"vote_count":20624}'
+  recorded_at: Mon, 09 Dec 2024 22:39:38 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/11
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_API_KEY>
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 09 Dec 2024 20:27:21 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=25103
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 5dfd93b8685f3044b4e3a03ef882eddf
+      X-Memc-Age:
+      - '1691'
+      X-Memc-Expires:
+      - '25103'
+      Etag:
+      - W/"aff968fc49f60f0ff11497376f7f2790"
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 f0a2a95cb4d25b2414a9c1a7a754943e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - uDL2ZGhR9aay4VTxG3LZpP1phbctzXeUdHfR70llaeyy6uoSOotCww==
+      Age:
+      - '7937'
+    body:
+      encoding: UTF-8
+      string: '{"adult":false,"backdrop_path":"/zqkmTXzjkAgXmEWLRsY4UpTWCeo.jpg","belongs_to_collection":{"id":10,"name":"Star
+        Wars Collection","poster_path":"/r8Ph5MYXL04Qzu4QBbq2KjqwtkQ.jpg","backdrop_path":"/zZDkgOmFMVYpGAkR9Tkxw0CRnxX.jpg"},"budget":11000000,"genres":[{"id":12,"name":"Adventure"},{"id":28,"name":"Action"},{"id":878,"name":"Science
+        Fiction"}],"homepage":"http://www.starwars.com/films/star-wars-episode-iv-a-new-hope","id":11,"imdb_id":"tt0076759","origin_country":["US"],"original_language":"en","original_title":"Star
+        Wars","overview":"Princess Leia is captured and held hostage by the evil Imperial
+        forces in their effort to take over the galactic Empire. Venturesome Luke
+        Skywalker and dashing captain Han Solo team together with the loveable robot
+        duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and
+        justice in the Empire.","popularity":98.77,"poster_path":"/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg","production_companies":[{"id":1,"logo_path":"/tlVSws0RvvtPBwViUyOFAO0vcQS.png","name":"Lucasfilm
+        Ltd.","origin_country":"US"},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
+        Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
+        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.203,"vote_count":20624}'
+  recorded_at: Mon, 09 Dec 2024 22:39:38 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/11/reviews
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_API_KEY>
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 09 Dec 2024 22:39:38 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=4393
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 79d001b9d7c04607bc73f8bd48118abb
+      X-Memc-Age:
+      - '21406'
+      X-Memc-Expires:
+      - '4393'
+      Etag:
+      - W/"ee565781e8d16114c54e9e582863fc0c"
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 1152d84b916a23e4b38cef1a20064b3e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - HBZRCAGpso1TOw1PC5cQblEtc1nUjyW9Z-9hJCRSVSbE1iI9ZDg3xA==
+    body:
+      encoding: UTF-8
+      string: "{\"id\":11,\"page\":1,\"results\":[{\"author\":\"Cat Ellington\",\"author_details\":{\"name\":\"Cat
+        Ellington\",\"username\":\"CatEllington\",\"avatar_path\":\"/uCmwgSbJAcHqNwSvQvTv2dB95tx.jpg\",\"rating\":null},\"content\":\"(As
+        I'm writing this review, Darth Vader's theme music begins to build in my mind...)\\r\\n\\r\\nWell,
+        it actually has a title, what the Darth Vader theme. And that title is \\\"The
+        Imperial March\\\", composed by the great John Williams, whom, as many of
+        you may already know, also composed the theme music for \\\"Jaws\\\" - that
+        legendary score simply titled, \\\"Main Title (Theme From Jaws)\\\".\\r\\n\\r\\nNow,
+        with that lil' bit of trivia aside, let us procede with the fabled film currently
+        under review: Star Wars. It had been at a drive-in theater in some small Illinois
+        town or other where my mother, my older brother, and I had spent our weekly
+        \\\"Movie Date Night\\\" watching this George Lucas directed cult masterpiece
+        from our car in the parking lot. On the huge outdoor screen, the film appeared
+        to be a silent one, but thanks to an old wire-attached speaker, we were able
+        to hear both the character dialogue and soundtrack loud and clear. We even
+        had ourselves a carful of vittles and snacks - walked back to our vehicle,
+        of course, from the wide-opened cinema's briefly distant concession stand.
+        Indeed, it had been a lovely summer evening that July.\\r\\n\\r\\nFrom the
+        time the film started, with my brother and I following along as our mother
+        sped-read the opening crawl, I began to feel rather antsy, thinking that this
+        movie, the first in a franchise that would soon be world-renowned, was going
+        to be boring, due to its genre being Science Fiction: A respectably likable,
+        but not a passionately lovable genre of mine DURING THAT TIME. I just didn't
+        believe I was going to like Star Wars all that much ... But I soon found myself
+        intrigued ... And awed.\\r\\n\\r\\nGeorge Lucas is a man with a phenomenal,
+        and I do mean phenomenal imagination. Apart from his human characters (Han,
+        Luke, Leia, and Obi-Wan Kenobi, among others), the droids: C-3P0, R2-D2, R2-series,
+        and IG-88, not to mention those unusual characters like Jabba the Hutt, Yoda,
+        and Chewbacca, just to name a few, are all creations of Lucas's phenomenal
+        imagination. And I was completely in awe of each one of these strange beings.
+        Then there was Vader ... And the evil Emperor ... And the Stormtroopers ...
+        And the Spacecraft ... And the galaxies (I'll admit that I am a huge lover
+        of the Universe in all its Celestial glory) ... And the magnificent planets
+        ... The Lightsabers ... And so on. Star Wars is a gorgeously shot space opera;
+        it is truly an epic masterpiece. We enjoyed this film tremendously. And my
+        brother was a die-hard fan from that night onward. He, my brother, had even
+        received for Christmas that year, nearly every Star Wars action figure that
+        my mother could find, including two of the spacecraft: The Millennium Falcon
+        and Star Destroyer. The Death Star space station had too been wrapped beneath
+        our Christmas tree - tagged with his name. It was totally crazy, what the
+        new Star Wars era. Frenzied! But it was great ... Even still, to this day.\\r\\n\\r\\nI
+        don't personally know anyone whom has yet to see Star Wars, but that certainly
+        doesn't suggest there are still a few people out there who haven't. And if
+        you're one of the latter, then you should know that this classic space opera
+        comes highly recommended. The entire series is told backwards, so you'll definitely
+        want to see Star Wars first, followed by its two sequels: The Empire Strikes
+        Back and Return of the Jedi ... In that order. I trust that you'll too discover
+        yourself to be a lifelong cult fan in the wake. \U0001F60A\",\"created_at\":\"2017-02-13
+        22:23:01 UTC\",\"id\":\"58a231c5925141179e000674\",\"updated_at\":\"2021-06-23
+        15:57:53 UTC\",\"url\":\"https://www.themoviedb.org/review/58a231c5925141179e000674\"},{\"author\":\"John
+        Chard\",\"author_details\":{\"name\":\"\",\"username\":\"John Chard\",\"avatar_path\":\"/utEXl2EDiXBK6f41wCLsvprvMg4.jpg\",\"rating\":10.0},\"content\":\"A
+        long time ago in a childhood not too far away...\\r\\n\\r\\nPrincess Leia
+        is captured and held hostage by the Imperial Army as it seeks to rule the
+        Galactic Empire. An old Jedi Knight by the name of Ben \\\"Obi-Wan\\\" Kenobi
+        may just be hers, and the rebels only hope. Teaming up with farm boy Luke
+        Skywalker, scoundrel Captain Han Solo, and a couple of quirky droids, Kenobi
+        sets off on a mission that could well shape the destiny of the Galaxy, and
+        all who dwell within it.\\r\\n\\r\\nBack in 1977 I was but a wee 11 year old
+        boy, weened on films from all genres by my movie loving parents, I had no
+        idea that Star Wars was to have the same impact on me as Jaws had two summers
+        previously, where yet again I found myself queueing around the block for two
+        whole hours to see a film in a one screen theatre. My love of cinema firmly
+        cemented, Star Wars was the start of a love affair that lasts to this very
+        day.\\r\\n\\r\\nAs the years have rolled by and my love of cinema has taken
+        on more in-depth and serious tones, I have come to realise that Star Wars
+        proves to be a far from flawless picture. Certainly its detractors do point
+        to some frayed acting and call the plot structure a jazzed up good versus
+        evil axis, while the charge of George Lucas referencing many prior pictures
+        most assuredly stands, but really do those things matter? No they do not,
+        because Star Wars opened up a new world of cinema, something of a portal to
+        youngsters such as I, it got people talking and debating about the merits
+        of model work in films (which is of an extraordinary high standard here),
+        it nudged film makers to explore being bigger and bolder in their approach,
+        and crucially, above all else, it got film goers hungry again, a hankering
+        for more please if you may. Now it has to be said that all that followed 20th
+        Century Fox's historic blockbuster didn't run with the baton, in fact most
+        pale into comparison on impact value, but for better or worse (depending on
+        the discerning viewers peccadilloes), Star Wars stands as a bastion of adventure
+        laden entertainment.\\r\\n\\r\\nIt is by definition one of the most successful
+        films in history, George Lucas perhaps didn't know it at the time, but in
+        what was to become an almost operatic anthology, he didn't just make a movie,
+        he created a whole new world seeping with style and rich texture. Almost as
+        amazing as the success of the series, is how it has become part of modern
+        day pop culture, anything from religion to everyday speak has at some time
+        or another referenced Lucas' baby. Ultimately, though, it's one single thing
+        that made (and still does make) Star Wars so great, it's that it has the ability
+        to lift the audience into a rousing united feel good cheer; and that is something
+        that few films can ever lay claim too. In 1977 it was an awe inspiring event
+        to watch in the theatre, now here in my middle age it's an event that is like
+        hugging a dear old friend, a friend that I know will never ever let me down
+        no matter how many times I turn to it. 10/10\",\"created_at\":\"2019-07-21
+        07:04:26 UTC\",\"id\":\"5d340e7a2f8d090388d21ff2\",\"updated_at\":\"2024-05-16
+        15:22:23 UTC\",\"url\":\"https://www.themoviedb.org/review/5d340e7a2f8d090388d21ff2\"},{\"author\":\"gastyny\",\"author_details\":{\"name\":\"\",\"username\":\"gastyny\",\"avatar_path\":null,\"rating\":10.0},\"content\":\"Star
+        Wars (1977) is a true masterpiece of cinema, and is \\r\\n  definitely one
+        of the best films ever made.\\r\\n\\r\\nFor me Star Wars (1977) is the best
+        movie of all time,tied with The Lord of the Rings trilogy. Star Wars (1977)
+        it is for sure the most iconic film of all time everything in it is iconic.
+        The direction, the script, the performances in this film are brilliant, all
+        the characters are captivating and well developed. \\r\\n\\r\\nAnyway, this
+        is a totally perfect film, I only have praise for it, it is certainly a masterpiece
+        of cinema, and my grade for it is 10\\\\10.\",\"created_at\":\"2020-04-13
+        22:40:05 UTC\",\"id\":\"5e94ea4566565a0014baa6c5\",\"updated_at\":\"2021-06-23
+        15:58:36 UTC\",\"url\":\"https://www.themoviedb.org/review/5e94ea4566565a0014baa6c5\"},{\"author\":\"r96sk\",\"author_details\":{\"name\":\"\",\"username\":\"r96sk\",\"avatar_path\":\"/mwR7rFHoDcobAx1i61I3skzMW3U.jpg\",\"rating\":9.0},\"content\":\"A
+        quality start to the franchise.\\r\\n\\r\\nI say start, I guess that depends
+        on the (seemingly) controversial way of watching these films - I've decided
+        on release order, so it's the beginning for me anyway. I've heard a lot about
+        <em>'Star Wars'</em> so I am expecting big things, this didn't disappoint
+        whatsoever.\\r\\n\\r\\nI unquestionably enjoyed this! If I didn't know this
+        was released in 1977 I would never have guessed, it still holds up astonishingly
+        well. The special effects are spectacular for the vast, vast majority; even
+        the stuff that perhaps hasn't aged as supremely still looks superb.\\r\\n\\r\\nThe
+        cast are a joy. I actually wouldn't say any performance sensationally stood
+        out, but all the actors and all the characters are so much fun to watch together.
+        Mark Hamill is impressive as Luke, Harrison Ford is entertaining as Han and
+        Carrie Fisher is super as Leia. Credit also to James Earl Jones and Alec Guinness,
+        among others. Despite not watching until now, I literally already knew all
+        of the character names - shows how timeless these are.\\r\\n\\r\\nThe plot
+        makes for top notch viewing, I found the pacing to be particularly spot on.
+        And how about that score? Stupendous! I really have no negatives for this,
+        I'm sure it isn't perfect but I had a very fun time with it.\",\"created_at\":\"2021-02-01
+        00:42:42 UTC\",\"id\":\"60174e821b70ae003c643834\",\"updated_at\":\"2021-06-23
+        15:58:50 UTC\",\"url\":\"https://www.themoviedb.org/review/60174e821b70ae003c643834\"},{\"author\":\"GenerationofSwine\",\"author_details\":{\"name\":\"\",\"username\":\"GenerationofSwine\",\"avatar_path\":\"/xYhvrFNntgAowjRsf6mRg9JgITr.jpg\",\"rating\":10.0},\"content\":\"Everyone
+        and their mother is going to write reviews about the Star Wars movies...and
+        this one, this one actually came out before I was born.\\r\\n\\r\\nIt breaks
+        the heart. I had to wait until the re-release before I got to see this one
+        on the big screen. This is the one that ruined my Star Wars opening night
+        streak...\\r\\n\\r\\n...Well The Force Awakens ALMOST ruined it further. I
+        had to drive out to my parents house just to see it, for the sake of tradition,
+        and when I got there they had already gone without me...twice.\\r\\n\\r\\nSome
+        angry words later and I guilted my mom, pointing out the drive, to force her
+        into a third go.\\r\\n\\r\\nBut that is neither here nor there.\\r\\n\\r\\nThis
+        was the movie that started it all. And the first time I saw it, it was on
+        Beta. Once upon a time my family had the movie in Beta. And then I had the
+        trilogy in VHS. And then I had it on DVD. And it is going to repeat like that
+        as the mediums change.\\r\\n\\r\\nIts one of those movies that you have to
+        own, even as technology changes. It is actually one of those movies you want
+        to buy right away when the technology changes, just to see it in better and
+        better quality.\\r\\n\\r\\nThat should be saying something right there. But
+        for a lot of you its not.\\r\\n\\r\\nFor the rest of you, it is a fairy tale
+        in space, complete with knights and old wizards and a princess. Only its a
+        fairy tale in space made for, well, made for nerds like me.\\r\\n\\r\\nIt
+        is a legend and the type of legend that stays with people and makes old Gen-Xers
+        like me, cynical and grumpy, feel like little kids again.\\r\\n\\r\\nIt, along
+        with the Godfather, is the type of movie that breeds mental spousal abuse
+        as generations of men force their wives at gunpoint to watch them...and then
+        get confused and a little depressed when most of them don't see the fascination
+        with them.\\r\\n\\r\\nUnlike the Godfather, however, its the movie that fathers
+        force their children to watch and, then, their children carry the love for
+        it into the next generation.\\r\\n\\r\\nStar Wars is an endless cycle, even
+        the bad ones are good. And the fans create endless theories about them. They
+        buy the t-shirts, the buy the toys, they do everything they can to preserve
+        that love and pass it on.\\r\\n\\r\\nA New Hope, this is the film that started
+        all of that, and though there are better installments, this will always be
+        the first.\",\"created_at\":\"2023-01-14 02:41:03 UTC\",\"id\":\"63c2163f05a53300e99bfdd1\",\"updated_at\":\"2023-01-14
+        02:41:03 UTC\",\"url\":\"https://www.themoviedb.org/review/63c2163f05a53300e99bfdd1\"},{\"author\":\"CinemaSerf\",\"author_details\":{\"name\":\"CinemaSerf\",\"username\":\"Geronimo1967\",\"avatar_path\":\"/yz2HPme8NPLne0mM8tBnZ5ZWJzf.jpg\",\"rating\":9.0},\"content\":\"Thinking
+        back to the films that define my generation; I recall queuing round the cinema
+        as an excited 10 year old for two hours waiting to see this film. I wonder
+        how many people could say that they have done that in the last 20 years? This
+        film is a truly groundbreaking piece of formative cinema. Leaving aside the
+        magnificent special effects; this is a film about good and evil; empire, freedom
+        and democracy and of their true characterisations. It has a slightly stilted
+        script (particularly from Sir Alec Guinness) but that is more than offset
+        by a fabulous John Williams' score and the hugely engaging performances of
+        Hamill, Fisher and Ford with undoubtedly the best baddie cinema has ever seen
+        in \\\"Darth Vader\\\". Truly a wonderful watch.\",\"created_at\":\"2023-06-04
+        08:09:43 UTC\",\"id\":\"647c46c7e323f30148170b1b\",\"updated_at\":\"2023-06-04
+        08:09:43 UTC\",\"url\":\"https://www.themoviedb.org/review/647c46c7e323f30148170b1b\"}],\"total_pages\":1,\"total_results\":6}"
+  recorded_at: Mon, 09 Dec 2024 22:39:38 GMT
 recorded_with: VCR 6.3.1

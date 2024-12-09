@@ -31,64 +31,81 @@ class MovieGateway
     end
   end
 
-  def self.get_movie_runtime(id)
-    response1 = conn.get("/3/movie/#{id}") 
-    json = JSON.parse(response1.body, symbolize_names: true)
-    json[:runtime]
-  end
-
   def self.get_movie_by_id_full(id)
-    response1 = conn.get("/3/movie/#{id}") 
-    response2 = conn.get("3/movie/#{id}/credits")
-    response3 = conn.get("3/movie/#{id}/reviews")
-
-    json1 = JSON.parse(response1.body, symbolize_names: true)
-    json2 = JSON.parse(response2.body, symbolize_names: true)
-    json3 = JSON.parse(response3.body, symbolize_names: true)
-
-    cast = json2[:cast]
-    limited_cast = get_limited_cast(cast)
-
-    reviews = json3[:results]
-    limited_reviews = get_limited_reviews(reviews)
-
-    release_date = json1[:release_date]
-    release_year = format_release_year(release_date)
-
-    genres = json1[:genres].map { |genre| genre[:name] }
-
-    minutes = json1[:runtime]
-    runtime_final = format_runtime(minutes)
+    movie = fetch_movie_data(id)
 
     movie_data = {
-      id: json1[:id],
-      title: json1[:title],
-      release_year: release_year,
-      vote_average: json1[:vote_average],
-      runtime: runtime_final,
-      genres: genres,
-      summary: json1[:overview],
-      cast: limited_cast,
-      total_reviews: json3[:results].length,
-      reviews: limited_reviews
+      id: movie[:id],
+      title: movie[:title],
+      release_year: get_movie_release_year(id),
+      vote_average: movie[:vote_average],
+      runtime: get_movie_runtime(id),
+      genres: get_movie_genres(id),
+      summary: movie[:overview],
+      cast: get_cast_data(id),
+      total_reviews: get_total_reviews(id),
+      reviews: get_reviews_data(id)
     }
     movie_data
   end
 
-  def self.get_limited_cast(cast)
-    cast.first(10).map do |cast_member| {
-      character: cast_member[:character],
-      actor: cast_member[:name]
-    }
+  def self.get_movie_runtime_raw(movie_id)
+    movie_data = fetch_movie_data(movie_id)
+    movie_data[:runtime]
+  end
+
+  def self.get_movie_runtime(movie_id)
+    movie_data = fetch_movie_data(movie_id)
+    minutes = movie_data[:runtime]
+    format_runtime(minutes) 
+  end
+
+  private
+
+  def self.conn
+    Faraday.new(url: "https://api.themoviedb.org") do |faraday|
+      faraday.headers["Authorization"] = "Bearer #{Rails.application.credentials.tmdb[:key]}"
     end
   end
 
-  def self.get_limited_reviews(reviews)
-    reviews.first(5).map do |review| {
-      author: review[:author],
-      review: review[:content]
-    }
+  def self.format_release_year(release_date)
+    release_date = Date.parse(release_date)
+    release_date.year
+  end
+
+  def self.get_cast_data(id)
+    cast = fetch_movie_credits(id)[:cast]
+    get_limited_cast(cast)
+  end
+
+  def self.get_limited_cast(cast)
+    cast.first(10).map do |cast_member| 
+      { character: cast_member[:character], actor: cast_member[:name] }
     end
+  end
+
+  def self.get_reviews_data(id)
+    reviews = fetch_movie_reviews(id)[:results]
+    get_limited_reviews(reviews)
+  end
+
+  def self.get_total_reviews(id)
+    fetch_movie_reviews(id)[:results].length
+  end
+
+  def self.get_limited_reviews(reviews)
+    reviews.first(5).map do |review| 
+      { author: review[:author], review: review[:content] }
+    end
+  end
+
+  def self.get_movie_release_year(id)
+    release_date = fetch_movie_data(id)[:release_date]
+    format_release_year(release_date)
+  end
+
+  def self.get_movie_genres(id)
+    fetch_movie_data(id)[:genres].map { |genre| genre[:name] }
   end
 
   def self.format_runtime(minutes)
@@ -98,16 +115,18 @@ class MovieGateway
     "#{hours} hour#{"s" if hours > 1}, #{remaining_minutes} minute#{"s" if remaining_minutes > 1}"
   end
 
-  def self.format_release_year(release_date)
-    release_date = Date.parse(release_date)
-    release_date.year
+  def self.fetch_movie_data(id)
+    response = conn.get("/3/movie/#{id}") 
+    JSON.parse(response.body, symbolize_names: true)
   end
 
-  private
+  def self.fetch_movie_credits(id)
+    response = conn.get("/3/movie/#{id}/credits") 
+    JSON.parse(response.body, symbolize_names: true)
+  end
 
-  def self.conn
-    conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-      faraday.headers["Authorization"] = "Bearer #{Rails.application.credentials.tmdb[:key]}"
-    end
+  def self.fetch_movie_reviews(id)
+    response = conn.get("/3/movie/#{id}/reviews") 
+    JSON.parse(response.body, symbolize_names: true)
   end
 end

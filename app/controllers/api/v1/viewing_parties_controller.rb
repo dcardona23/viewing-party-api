@@ -5,7 +5,7 @@ rescue_from StandardError, with: :handle_runtime_error
     host = User.find(params[:user_id])
     viewing_party = ViewingParty.create!(viewing_party_params)
 
-    validate_runtime(viewing_party, MovieGateway.get_movie_runtime(params[:movie_id]))
+    validate_runtime(viewing_party, MovieGateway.get_movie_runtime_raw(params[:movie_id]))
     
     Attendee.create!(viewing_party: viewing_party, user: host, is_host: true, name: host.name, username: host.username)
 
