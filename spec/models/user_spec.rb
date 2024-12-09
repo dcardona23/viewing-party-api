@@ -37,6 +37,7 @@ RSpec.describe User, type: :model do
       viewing_party: @viewing_party2, user: @user3, is_host: false, 
     )
   end
+  
   describe "getting user information" do
     it "gets viewing parties a user has hosted" do
       user_attributes = @user3.get_attributes
