@@ -19,16 +19,6 @@ class ViewingParty < ApplicationRecord
     end
   end
 
-  def validate_runtime(runtime)
-    start_time = DateTime.parse(self.start_time) 
-    end_time = DateTime.parse(self.end_time) 
-
-    party_duration_in_seconds = (end_time - start_time) * 24 * 60 * 60
-    party_duration_in_minutes = (party_duration_in_seconds / 60).to_i
-
-    true unless party_duration_in_minutes < runtime
-  end
-
   private
 
   def parse_times
@@ -39,7 +29,6 @@ class ViewingParty < ApplicationRecord
   def start_time_before_end_time
     if start_time.present? && end_time.present? && start_time >= end_time
       errors.add(:start_time, "must be before end time")
-
     end
   end
 end

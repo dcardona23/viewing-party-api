@@ -88,13 +88,8 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
 
       data = JSON.parse(response.body, symbolize_names: true)
 
-      expect(data[:message]).to eq("Your query could not be completed")
-      expect(data[:errors]).to be_an(Array)
-      expect(data[:errors][0]).to eq("Name can't be blank")
-      expect(data[:errors][1]).to eq("Start time can't be blank")
-      expect(data[:errors][2]).to eq("End time can't be blank")
-      expect(data[:errors][3]).to eq("Movie can't be blank")
-      expect(data[:errors][4]).to eq("Movie title can't be blank")
+      expect(data[:message]).to eq("Validation failed: Name can't be blank, Start time can't be blank, End time can't be blank, Movie can't be blank, Movie title can't be blank")
+      expect(data[:status]).to eq("422")
     end
 
     it 'will not create a viewing party if the end time is before the start time' do
@@ -115,9 +110,8 @@ RSpec.describe "Create Viewing Party Endpoint", type: :request do
 
       data = JSON.parse(response.body, symbolize_names: true)
 
-      expect(data[:message]).to eq("Your query could not be completed")
-      expect(data[:errors]).to be_an(Array)
-      expect(data[:errors][0]).to eq("Start time must be before end time")
+      expect(data[:message]).to eq("Validation failed: Start time must be before end time")
+      expect(data[:status]).to eq("422")
     end
 
     it "will not add an invitee with an invalid id" do

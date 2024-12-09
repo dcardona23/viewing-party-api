@@ -1,5 +1,5 @@
 class Api::V1::ViewingPartiesController < ApplicationController
-rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
+rescue_from StandardError, with: :handle_runtime_error
 
   def create
     host = User.find(params[:user_id])
@@ -8,25 +8,34 @@ rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
     viewing_party = ViewingParty.create!(viewing_party_params)
     runtime = MovieGateway.get_movie_runtime(params[:movie_id])
 
-    if viewing_party.validate_runtime(runtime)
-        Attendee.create!(viewing_party: viewing_party, user: host, is_host: true, name: host.name, username: host.username)
-
-        viewing_party.add_invitees(invitees)
-        render json: ViewingPartySerializer.format_viewing_party(viewing_party) 
-    else
-      error_message = "Party duration is less than movie runtime!"
-      render json: ErrorSerializer.format_unprocessable(error_message, "422")
+    unless validate_runtime(viewing_party, runtime)
+      raise StandardError, "Party duration is less than movie runtime!"
     end
+
+    Attendee.create!(viewing_party: viewing_party, user: host, is_host: true, name: host.name, username: host.username)
+
+    viewing_party.add_invitees(invitees)
+
+    render json: ViewingPartySerializer.format_viewing_party(viewing_party) 
   end
 
   private
 
   def viewing_party_params
     params.require(:viewing_party).permit(:name, :start_time, :end_time, :movie_id, :movie_title, :user_id)
-
   end
 
-  def record_invalid(exception)
-    render json: { message: "Your query could not be completed", errors: exception.record.errors.full_messages }, status: :unprocessable_entity
+  def validate_runtime(viewing_party, runtime)
+    start_time = DateTime.parse(viewing_party.start_time) 
+    end_time = DateTime.parse(viewing_party.end_time) 
+
+    party_duration_in_seconds = (end_time - start_time) * 24 * 60 * 60
+    party_duration_in_minutes = (party_duration_in_seconds / 60).to_i
+
+    party_duration_in_minutes >= runtime
+  end
+
+  def handle_runtime_error(exception)
+    render json: ErrorSerializer.format_unprocessable(exception.message, "422"), status: :unprocessable_entity
   end
 end
